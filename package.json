@@ -1,0 +1,20 @@
+{
+  "name": "fanny_devilliers",
+  "version": "1.0.0",
+  "description": "Site de recettes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fa-dede/FannyDevilliers_7_12052021.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fa-dede/FannyDevilliers_7_12052021/issues"
+  },
+  "homepage": "https://github.com/Fa-dede/FannyDevilliers_7_12052021#readme"
+}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap");
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  padding: 42px 100px;
+}
+
+#logo-homepage {
+  display: block;
+  margin: auto;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.menuNav--searchInput {
+  width: 100%;
+  background-color: #e7e7e7;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  padding: 22px;
+}
+.menuNav--searchInput::placeholder {
+  opacity: 40%;
+  font-size: 18px;
+  color: #000;
+}
+.menuNav--buttonTagSelected {
+  display: flex;
+  background-color: #3282f7;
+  margin: 25px 0 15px 0;
+  width: 107px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  justify-content: space-around;
+  align-items: center;
+}
+.menuNav--buttonTagSelected__crossClose {
+  cursor: pointer;
+}
+
+.dropDownMenus {
+  height: 70px;
+  width: 170px;
+  display: inline;
+}
+.dropDownMenus--select {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  border-radius: 5px;
+  color: #fff;
+  appearance: searchfield;
+  padding: 15px;
+  appearance: none;
+  z-index: 99;
+  font-size: 18px;
+  cursor: pointer;
+}
+.dropDownMenus--select_ingredients {
+  background-color: #3282f7;
+  border-color: #3282f7;
+}
+.dropDownMenus--select_appareil {
+  background-color: #68d9a4;
+  border-color: #68d9a4;
+  padding-left: 25px;
+}
+.dropDownMenus--select_ustensiles {
+  background-color: #ed6454;
+  border-color: #ed6454;
+}
+.dropDownMenus--chevronDown {
+  color: #fff;
+  z-index: 9;
+  position: relative;
+  right: 40px;
+}
+
+#recipes-container {
+  padding-top: 25px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe {
+  margin: 25px;
+  min-width: 380px;
+  max-width: 380px;
+  min-height: 300px;
+}
+.recipe--background {
+  background-color: #c7bebe;
+  height: 178px;
+  border-radius: 5px 5px 0 0;
+}
+.recipe--information {
+  background-color: #e7e7e7;
+  border-radius: 0 0 5px 5px;
+  padding: 20px 20px 0px 20px;
+  min-height: 180px;
+}
+.recipe--information_name {
+  display: inline;
+  margin: unset;
+}
+.recipe--information_time {
+  display: block;
+  float: right;
+  margin: unset;
+  font-size: 18px;
+}
+.recipe--information--text {
+  margin-right: unset;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.recipe--information--text_list {
+  margin: unset;
+  min-width: 161px;
+  display: inline;
+  padding-left: unset;
+  list-style-type: none;
+  font-size: 12px;
+}
+.recipe--information--text_instructions {
+  display: inline;
+  margin: unset;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=styles.css.map */

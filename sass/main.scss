@@ -1,0 +1,143 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  // border: black 1px solid;
+}
+
+body {
+  padding: 42px 100px;
+}
+
+#logo-homepage {
+  display: block;
+  margin: auto;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.menuNav {
+  &--searchInput {
+    width: 100%;
+    background-color: $inputSearchBgColor;
+    height: 70px;
+    border: none;
+    border-radius: 5px;
+    padding: 22px;
+    &::placeholder {
+      opacity: 40%;
+      font-size: 18px;
+      color: #000;
+    }
+  }
+  &--buttonTagSelected {
+    display: flex;
+    background-color: $ingredientsBgColor;
+    margin: 25px 0 15px 0;
+    width: 107px;
+    height: 37px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    justify-content: space-around;
+    align-items: center;
+    &__crossClose {
+      cursor: pointer;
+    }
+  }
+}
+
+.dropDownMenus {
+  height: 70px;
+  width: 170px;
+  display: inline;
+  &--select {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: 5px;
+    color: #fff;
+    appearance: searchfield;
+    padding: 15px;
+    appearance: none;
+    z-index: 99;
+    font-size: 18px;
+    cursor: pointer;
+
+    &_ingredients {
+      background-color: $ingredientsBgColor;
+      border-color: $ingredientsBgColor;
+    }
+    &_appareil {
+      background-color: $appareilBgColor;
+      border-color: $appareilBgColor;
+      padding-left: 25px;
+    }
+    &_ustensiles {
+      background-color: $ustensiltesBgColor;
+      border-color: $ustensiltesBgColor;
+    }
+  }
+  &--chevronDown {
+    color: #fff;
+    z-index: 9;
+    position: relative;
+    right: 40px;
+  }
+}
+
+#recipes-container {
+  padding-top: 25px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe {
+  margin: 25px;
+  min-width: 380px;
+  max-width: 380px;
+  min-height: 300px;
+  &--background {
+    background-color: $recipeBgColor;
+    height: 178px;
+    border-radius: 5px 5px 0 0;
+  }
+  &--information {
+    background-color: $inputSearchBgColor;
+    border-radius: 0 0 5px 5px;
+    padding: 20px 20px 0px 20px;
+    min-height: 180px;
+    &_name {
+      display: inline;
+      margin: unset;
+    }
+    &_time {
+      display: block;
+      float: right;
+      margin: unset;
+      font-size: 18px;
+    }
+    &--text {
+      margin-right: unset;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      &_list {
+        margin: unset;
+        min-width: 161px;
+        display: inline;
+        padding-left: unset;
+        list-style-type: none;
+        font-size: 12px;
+      }
+      &_instructions {
+        display: inline;
+        margin: unset;
+        font-size: 12px;
+      }
+    }
+  }
+}
