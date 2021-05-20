@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="./img/favicon-toque-de-chef.png">
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="./main.js" type="module"></script>
-    <title>Document</title>
+    <title>Les petits plats</title>
 </head>
 
 <body>
@@ -20,63 +21,73 @@
     </header>
     <nav class="menuNav">
         <input class="menuNav--searchInput" type="search"
-            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
-        <button class="menuNav--buttonTagSelected">Coco
-            <img class="menuNav--buttonTagSelected__crossClose" src="./img/cross-close.svg" alt="supprimer le tags">
-        </button>
+            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+            onclick="javascript:this.value=' '"><i class="menuNav--searchInput_glass fas fa-search"></i>
+        <div class="menuNav--buttons-selected-container"></div>
+
+        <!-- Incrémentation Tags en JS  -->
 
         <div id="dropDownMenus-container">
 
-            <div id="ingredients" class="dropDownMenus">
+            <div class="dropDownMenus-container_1">
 
+                <div id="container-1_inactive" class="dropDownMenus-container_inactive">
 
-                <select name="ingredients" id="ingredients-select"
-                    class="dropDownMenus--select dropDownMenus--select_ingredients">
-                    <option id="ingredient-1stLine" value="">Ingrédients
-                    </option>
-                    <option value="">Lait de Coco
-                    </option>
-                    <option value="">Sucre
-                    </option>
-                    <option value="">Concombre
-                    </option>
-                </select>
-                <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_ingredients fas fa-chevron-down"></i>
+                    <input type="text" id="ingredients-input"
+                        class="dropDownMenus--input dropDownMenus--input_ingredients" placeholder="Ingrédients">
+                    <i id="chevron-down-ingredient" class="dropDownMenus--chevronDown fas fa-chevron-down"></i>
+                </div>
 
+                <div id="container-1_active" class="dropDownMenus--input_active dropDownMenus--input_active_ingredient">
+
+                    <input type="text" class="dropDownMenus--input_active_title"
+                        placeholder="Rechercher un ingrédient"><i id="chevron-up-ingredient"
+                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
+                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ing">
+                        <!-- Incrémentation <li> en JS -->
+                    </ul>
+
+                </div>
             </div>
 
-            <div id="appareil" class="dropDownMenus">
+            <div class="dropDownMenus-container_2">
+                <div id="container-2_inactive">
+                    <input type="text" id="appareil-input"
+                        class="dropDownMenus dropDownMenus--input dropDownMenus--input_appareil" placeholder="Appareil">
+                    <i
+                        class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down inactive"></i>
+                </div>
 
-                <select name="appareil" id="appareil-select"
-                    class="dropDownMenus--select dropDownMenus--select_appareil">
-                    <option id="appareil-1stLine" value="">Appareil
-                    </option>
-                    <option value="">Lait de Coco
-                    </option>
-                    <option value="">Sucre
-                    </option>
-                    <option value="">Concombre
-                    </option>
-                </select>
-                <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down"></i>
+                <div id="container-2_active" class="dropDownMenus--input_active dropDownMenus--input_active_appliance">
+                    <input type="text" class="dropDownMenus--input_active_title" placeholder="Rechercher un appareil"><i
+                        id="chevron-up-appliance"
+                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
+                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_appliance">
+                        <!-- Incrémentation <li> en JS -->
+                    </ul>
+                </div>
             </div>
 
-            <div id="ustensiles" class="dropDownMenus">
+            <div class="dropDownMenus-container_3">
 
-                <select name="ustensiles" id="ustensiles-select"
-                    class="dropDownMenus--select dropDownMenus--select_ustensiles">
-                    <option id="ustensiles-1stLine" value="">Ustensiles
-                    </option>
-                    <option value="">Lait de Coco
-                    </option>
-                    <option value="">Sucre
-                    </option>
-                    <option value="">Concombre
-                    </option>
-                </select>
-                <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down"></i>
+                <div id="container-3_inactive">
+                    <input type="text" id="ustensiles-input"
+                        class="dropDownMenus dropDownMenus--input dropDownMenus--input_ustensiles"
+                        placeholder="Ustensiles">
+                    <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down"></i>
+                </div>
+
+                <div id="container-3_active" class="dropDownMenus--input_active dropDownMenus--input_active_ustensils">
+                    <input type="text" class="dropDownMenus--input_active_title"
+                        placeholder="Rechercher un ustensile"><i id="chevron-up-ustensils"
+                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
+                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ustensils">
+                        <!-- Incrémentation <li> en JS -->
+                    </ul>
+                </div>
             </div>
         </div>
+
         <main id="recipes-container">
             <article id="1st-Article" class="recipe">
                 <div class="recipe--background"></div>
@@ -113,7 +124,8 @@
                             <li><strong>Sucre</strong> : 20g</li>
                             <li><strong>Glaçons</strong> : 2</li>
                         </ul>
-                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un plat
+                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un
+                            plat
                             et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond).
                             Laisser reposer au réfrigérateur au moins 2 heures. ...</p>
                     </div>
@@ -173,7 +185,8 @@
                             <li><strong>Sucre</strong> : 20g</li>
                             <li><strong>Glaçons</strong> : 2</li>
                         </ul>
-                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un plat
+                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un
+                            plat
                             et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond).
                             Laisser reposer au réfrigérateur au moins 2 heures. ...</p>
                     </div>

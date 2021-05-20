@@ -1,0 +1,15 @@
+@media (max-width: 1472px) {
+  .recipe {
+    max-width: unset;
+    min-width: 380px;
+    width: 47%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .recipe {
+    max-width: unset;
+    min-width: 380px;
+    width: 100%;
+  }
+}
