@@ -1,15 +1,21 @@
 import { recipes } from "./JS/datas.js";
+import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
 
 class searchBarFactory {
-  constructor() {
+  constructor(articlesArray) {
     this.inputOfMainSearchBar = document.querySelector(".menuNav--searchInput");
     this.messageUnderInput = document.querySelector("#under-input-message");
+    this.articlesArray = articlesArray;
 
     this.searchInsideMainSearchBar();
+    new MainSearchFactory(this.inputOfMainSearchBar, this.articlesArray);
   }
 
   searchInsideMainSearchBar() {
     this.inputOfMainSearchBar.addEventListener("input", (e) => {
+      this.articlesArray.forEach((article) => {
+        article.style.display = "flex";
+      });
       this.messageUnderInput.style.display = "none";
       this.messageUnderInput.innerHTML = "";
       if (e.target.value.length > 2) {
@@ -44,7 +50,7 @@ class searchBarFactory {
         });
 
         this.addSuggestionToInputByClic();
-        this.addErrorMessageUnderInput();
+        this.removeSpaceUnderInput();
       }
     });
   }
@@ -78,10 +84,6 @@ class searchBarFactory {
     }
   }
 
-  // showErrorMessage() {
-  //   this.messageUnderInput.innerHTML = `<p id = "error-message"> Oups...Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc... </p>`;
-  // }
-
   addSuggestionToInputByClic() {
     let suggestionsValues = [
       ...document.querySelectorAll(".autocompleteSearch"),
@@ -90,15 +92,15 @@ class searchBarFactory {
     suggestionsValues.forEach((suggestion) => {
       suggestion.addEventListener("click", (e) => {
         input.value = e.target.innerHTML;
+        input.value = input.value.trim(); //supprime les espaces au début et à la fin de la chaîne de caractère
         this.messageUnderInput.style.display = "none";
       });
     });
   }
 
-  addErrorMessageUnderInput() {
-    console.log(this.messageUnderInput.children);
+  removeSpaceUnderInput() {
     if (this.messageUnderInput.children.length < 1) {
-      this.messageUnderInput.innerHTML = `<p id = "error-message"> Oups...Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc... </p>`;
+      this.messageUnderInput.style.display = "none";
     }
   }
 

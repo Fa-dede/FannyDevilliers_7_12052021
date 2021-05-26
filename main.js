@@ -5,8 +5,11 @@ import { ButtonListFactory, displayTagAboveMenuNav } from "./menuNav_tags.js";
 import { NavigateInButton } from "./navigation_inside_button.js";
 import { displayRecipesFactory } from "./recipes_display.js";
 
-new searchBarFactory();
 new displayRecipesFactory();
+
+let articlesArray = [...document.querySelectorAll(".recipe")];
+
+new searchBarFactory(articlesArray);
 
 let buttonIngredients = document.querySelector("#container-1_inactive");
 let listOfIngredients = document.querySelector(

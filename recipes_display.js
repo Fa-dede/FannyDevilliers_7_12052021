@@ -3,7 +3,6 @@ import { recipes } from "./JS/datas.js";
 class displayRecipesFactory {
   constructor() {
     this.recipesContainer = document.querySelector("#recipes-container");
-
     this.addRecipeToMainContainer();
   }
 
