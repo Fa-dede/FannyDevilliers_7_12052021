@@ -2,18 +2,27 @@ import { recipes } from "./JS/datas.js";
 
 // Génère les élements de type TAGS dans les listes déroulantes
 class ButtonListFactory {
-  constructor(name, button, buttonExpanded, nameOfClass, buttonForDisplay) {
+  constructor(
+    name,
+    button,
+    buttonExpanded,
+    nameOfClass,
+    buttonForDisplay,
+    arrayOfItemsDisplayedInList,
+    inactiveContainerID
+  ) {
     this.name = name;
     this.button = button;
     this.buttonExpanded = buttonExpanded;
     this.nameOfClass = nameOfClass;
     this.buttonForDisplay = buttonForDisplay;
+    this.arrayOfItemsDisplayedInList = arrayOfItemsDisplayedInList;
     this.crossCloseButton = [];
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
     this.arrayOfChevronUp = [];
-
+    this.inactiveContainerID = inactiveContainerID;
     //METHODES APPELEES
 
     this.addTagsToButton(this.nameOfClass);
@@ -27,6 +36,8 @@ class ButtonListFactory {
     this.eraseDuplicateItem(this.allUstensils);
 
     this.openNavigationList(button, buttonForDisplay);
+
+    this.closeDropDownMenuByClickingOutside(button, buttonForDisplay);
   }
 
   eraseDuplicateItem(array) {
@@ -68,44 +79,55 @@ class ButtonListFactory {
 
     array.forEach((item) => {
       this.buttonExpanded.innerHTML += `
-      <li class ="name-of-item" title="${item}">${item}
+      <li tabIndex = "0" class ="name-of-item" title="${item}">${item}
       </li>`;
     });
   }
 
+  //OUVRE ET FERME LES LISTES DEROULANTES
   openNavigationList(buttonInactive, buttonActive) {
-    let menuNavIsOpen = false;
     buttonInactive.addEventListener("click", (e) => {
       buttonInactive.style.display = "none";
       buttonActive.style.display = "block";
+      buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT
+      const closeActiveInputByChevron = (containerId, chevronId) => {
+        if (buttonActive.id === containerId) {
+          document.querySelector(chevronId).addEventListener("click", (e) => {
+            buttonActive.style.display = "none";
+            buttonInactive.style.display = "block";
+          });
+        }
+      };
 
-      if (buttonActive.id === "container-1_active") {
+      closeActiveInputByChevron("container-1_active", "#chevron-up-ingredient");
+      closeActiveInputByChevron("container-2_active", "#chevron-up-appliance");
+      closeActiveInputByChevron("container-3_active", "#chevron-up-ustensils");
+    });
+  }
+
+  closeDropDownMenuByClickingOutside(buttonInactive, buttonActive) {
+    document.addEventListener("click", (e) => {
+      if (
+        e.target.parentNode !== buttonActive &&
+        e.target.parentNode !== buttonInactive
+      ) {
+        buttonActive.style.display = "none";
+        buttonInactive.style.display = "block";
         document
-          .querySelector("#chevron-up-ingredient")
-          .addEventListener("click", (e) => {
-            buttonActive.style.display = "none";
-            buttonInactive.style.display = "block";
-          });
-      }
-      if (buttonActive.id === "container-2_active") {
-        document
-          .querySelector("#chevron-up-appliance")
-          .addEventListener("click", (e) => {
-            buttonActive.style.display = "none";
-            buttonInactive.style.display = "block";
-          });
-      }
-      if (buttonActive.id === "container-3_active") {
-        document
-          .querySelector("#chevron-up-ustensils")
-          .addEventListener("click", (e) => {
-            buttonActive.style.display = "none";
-            buttonInactive.style.display = "block";
+          .querySelectorAll(".dropDownMenus--input_active_title")
+          .forEach((input) => {
+            input.value = null;
+            let list = [...document.querySelectorAll(".name-of-item")];
+            list.forEach((li) => {
+              li.style.display = "flex";
+            });
           });
       }
     });
   }
 }
+
+// AFFICHE LES TAGS SELECTIONNES AU DESSUS DES BOUTONS
 
 const displayTagAboveMenuNav = () => {
   let arrayOfCrossCloseAbove = [];
@@ -123,51 +145,30 @@ const displayTagAboveMenuNav = () => {
               <img class="menuNav--buttonTagSelected__crossClose" src="./img/cross-close.svg" alt="supprimer le tags">
           </button>`
       );
-      console.log(e.target.parentNode.className);
       let buttonForTagsAbove = document.querySelector(
         ".menuNav--buttonTagSelected"
       );
-      getBgColorOfTagsAbove(
-        buttonForTagsAbove,
-        arrayOfCrossCloseAbove,
-        e,
-        "ing",
-        "#3282f7"
-      );
-      getBgColorOfTagsAbove(
-        buttonForTagsAbove,
-        arrayOfCrossCloseAbove,
-        e,
-        "appliance",
-        "#68d9a4"
-      );
-      getBgColorOfTagsAbove(
-        buttonForTagsAbove,
-        arrayOfCrossCloseAbove,
-        e,
-        "ustensils",
-        "#ed6454"
-      );
+
+      // DEFINIT LA COULEUR DE L'ARRIERE-PLAN DU BOUTON DE TAG SELECTIONNE
+      const getBgColorOfTagsAbove = (e, className, color) => {
+        if (e.target.parentNode.className.includes(className)) {
+          buttonForTagsAbove.style.backgroundColor = color;
+          arrayOfCrossCloseAbove.push(
+            document.querySelector(".menuNav--buttonTagSelected__crossClose")
+          );
+        }
+      };
+
+      getBgColorOfTagsAbove(e, "ing", "#3282f7");
+      getBgColorOfTagsAbove(e, "appliance", "#68d9a4");
+      getBgColorOfTagsAbove(e, "ustensils", "#ed6454");
+
       closeTagAboveMenuNav(arrayOfCrossCloseAbove);
     });
   });
 };
 
-const getBgColorOfTagsAbove = (
-  buttonForTagsAbove,
-  arrayOfCrossCloseAbove,
-  e,
-  className,
-  color
-) => {
-  if (e.target.parentNode.className.includes(className)) {
-    buttonForTagsAbove.style.backgroundColor = color;
-    arrayOfCrossCloseAbove.push(
-      document.querySelector(".menuNav--buttonTagSelected__crossClose")
-    );
-  }
-};
-
+// SUPPRIME LE TAG SELECTIONNE AU CLIC SUR LA CROIX
 const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
   arrayOfCrossCloseAbove.forEach((cross) => {
     cross.addEventListener("click", (e) => {
@@ -176,4 +177,4 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
   });
 };
 
-export { ButtonListFactory, displayTagAboveMenuNav, closeTagAboveMenuNav };
+export { ButtonListFactory, displayTagAboveMenuNav };

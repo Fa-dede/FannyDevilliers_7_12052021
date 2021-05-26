@@ -29,7 +29,7 @@ const recipes = [
     ],
     time: 10,
     description:
-      "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
+      "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixeur jusqu'à avoir la consistence désirée",
     appliance: "Blender",
     ustensils: ["Cuillère à Soupe", "Verres", "Presse citron"],
   },
@@ -60,7 +60,7 @@ const recipes = [
         quantity: 5,
       },
       {
-        ingredient: "Lait de Coco",
+        ingredient: "Lait de coco",
         quantity: 100,
         unit: "ml",
       },
@@ -86,7 +86,7 @@ const recipes = [
         unit: "ml",
       },
       {
-        ingredient: "Coulis de tomate",
+        ingredient: "Coulis de tomates",
         quantity: 25,
         unit: "cl",
       },
@@ -167,7 +167,7 @@ const recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Crème fraiche",
+        ingredient: "Crème fraîche",
         quantity: 2,
         unit: "Cuillères à soupe",
       },
@@ -184,7 +184,7 @@ const recipes = [
     ],
     time: 45,
     description:
-      "Etaler la pâte feuilleté aux dimensions du Moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
+      "Etaler la pâte feuilleté aux dimensions du Moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de Crème fraîche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
     appliance: "Four",
     ustensils: ["Moule à tarte", "Râpe à fromage", "Couteau"],
   },
@@ -206,7 +206,7 @@ const recipes = [
         quantity: "2",
       },
       {
-        ingredient: "Crème fraiche",
+        ingredient: "Crème fraîche",
         quantity: 25,
         unit: "cl",
       },
@@ -223,7 +223,7 @@ const recipes = [
     ],
     time: 50,
     description:
-      "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un Saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le Moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
+      "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un Saladier, découper les pommes en tranches, ajouter la Crème fraîche aux oeufs. Une fois que tout est pret, étalez la tarte dans le Moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
     appliance: "Four",
     ustensils: ["Moule à tarte", "Saladier", "Fourchette"],
   },
@@ -260,7 +260,7 @@ const recipes = [
     description:
       "Etaler la pate dans les Moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
     appliance: "Four",
-    ustensils: ["Moule à tartelettes (6)", "Casserolle"],
+    ustensils: ["Moule à tartelettes (6)", "Casserole"],
   },
   {
     id: 8,
@@ -301,7 +301,7 @@ const recipes = [
     description:
       "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un Moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour déMouler. Servir avec une boule de glace pour plus de gourmandise.",
     appliance: "Four",
-    ustensils: ["Moule à gateaux", "Casserolle"],
+    ustensils: ["Moule à gateaux", "Casserole"],
   },
   {
     id: 9,
@@ -393,7 +393,7 @@ const recipes = [
         unit: "tranches",
       },
       {
-        ingredient: "Pommes",
+        ingredient: "Pomme",
         quantity: 1,
       },
       {
@@ -423,7 +423,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Pommes",
+        ingredient: "Pomme",
         quantity: 8,
       },
       {
@@ -439,7 +439,7 @@ const recipes = [
     ],
     time: 40,
     description:
-      "Éplucher les fruits et les couper en morceaux, les mettre dans une Casserolle en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
+      "Éplucher les fruits et les couper en morceaux, les mettre dans une Casserole en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
     appliance: "Casserole",
     ustensils: ["couteau", "économe"],
   },
@@ -574,7 +574,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Pennes",
+        ingredient: "Penne",
         quantity: 500,
         unit: "grammes",
       },
@@ -591,7 +591,7 @@ const recipes = [
     ],
     time: 45,
     description:
-      "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
+      "Faire cuire les pâtes si vous n'avez pas de penne des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
     appliance: "Four",
     ustensils: ["plat à gratin", "couteau", "râpe à fromage"],
   },
@@ -704,7 +704,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Crème fraiche",
+        ingredient: "Crème fraîche",
         quantity: 200,
         unit: "grammes",
       },
@@ -740,7 +740,7 @@ const recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Coulis de tomate",
+        ingredient: "Coulis de tomates",
         quantity: 300,
         unit: "grammes",
       },
@@ -755,15 +755,15 @@ const recipes = [
         unit: "cl",
       },
       {
-        ingredient: "Crème Fraiche",
+        ingredient: "Crème fraîche",
         quantity: 1,
         unit: "Cuillères à soupe",
       },
     ],
     time: 30,
     description:
-      "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
-    appliance: "Casserolle",
+      "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la Crème fraîche à la viande hachée. Serivir.",
+    appliance: "Casserole",
     ustensils: ["Cuillère en bois", "louche", "couteau"],
   },
   {
@@ -800,7 +800,7 @@ const recipes = [
     description:
       "Faire fondre le chocolat et le beurre au bain marie. Dans un Saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le Moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
     appliance: "Four",
-    ustensils: ["Moule à gateaux", "Fouet", "Casserolle"],
+    ustensils: ["Moule à gateaux", "Fouet", "Casserole"],
   },
   {
     id: 23,
@@ -827,7 +827,7 @@ const recipes = [
         quantity: 3,
       },
       {
-        ingredient: "Crème Fraîche",
+        ingredient: "Crème fraîche",
         quantity: 20,
         unit: "cl",
       },
@@ -947,8 +947,8 @@ const recipes = [
     ],
     time: 25,
     description:
-      "Verser de l'huile dans une cocotte minute couper les légumes et les verser dans l'huile chaude. Laisser cuire et remuer pendant 10 minutes. Passer aux mixer. Servir.",
-    appliance: "Mixer",
+      "Verser de l'huile dans une cocotte minute couper les légumes et les verser dans l'huile chaude. Laisser cuire et remuer pendant 10 minutes. Passer aux Mixeur. Servir.",
+    appliance: "Mixeur",
     ustensils: ["cocotte minute", "couteau"],
   },
   {
@@ -982,8 +982,8 @@ const recipes = [
     ],
     time: 15,
     description:
-      "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crême fraîche",
-    appliance: "Casserolle",
+      "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crème fraîche",
+    appliance: "Casserole",
     ustensils: ["couteau", "Cuillère en bois"],
   },
   {
@@ -1011,7 +1011,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Crême fraîche",
+        ingredient: "Crème fraîche",
         quantity: 10,
         unit: "cl",
       },
@@ -1019,8 +1019,8 @@ const recipes = [
     time: 80,
     description:
       "Emincer les blanc de poireaux et les faire chauffer dans 25 grammes de beurre. AJouter les pommes de terres coupées en morceaux. Ajouter l'eau et laisser mijoter pour 45 minutes. Chauffer l'oseille avec le beurre restant puis incorporer le tout. Mixez. Ajoutez la crème. Bon appetit.",
-    appliance: "Mixer",
-    ustensils: ["Casserolle", "couteau"],
+    appliance: "Mixeur",
+    ustensils: ["Casserole", "couteau"],
   },
   {
     id: 29,
@@ -1050,8 +1050,8 @@ const recipes = [
     ],
     time: 30,
     description:
-      "Prendre les pois chiches, les mettre dans le mixer avec de l'huile d'olive, ajouter le jus des 2 citrons et du paprika selon le gout.",
-    appliance: "Mixer",
+      "Prendre les pois chiches, les mettre dans le Mixeur avec de l'huile d'olive, ajouter le jus des 2 citrons et du paprika selon le gout.",
+    appliance: "Mixeur",
     ustensils: ["Cuillère en bois", "presse citron"],
   },
   {
@@ -1076,9 +1076,9 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Mettre tous les ingrédients dans une cocotte. ajouter de l'eau pour recouvrir l'ensemble et laisser cuirre à petit feur pour 1 heure. Passer au mixer. Salez, poivrez. C'est prêt",
-    appliance: "Mixer",
-    ustensils: ["Casserolle", "Cuillère en bois"],
+      "Mettre tous les ingrédients dans une cocotte. ajouter de l'eau pour recouvrir l'ensemble et laisser cuirre à petit feur pour 1 heure. Passer au Mixeur. Salez, poivrez. C'est prêt",
+    appliance: "Mixeur",
+    ustensils: ["Casserole", "Cuillère en bois"],
   },
   {
     id: 31,
@@ -1218,8 +1218,8 @@ const recipes = [
     ],
     time: 25,
     description:
-      "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une Casserolle d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
-    appliance: "Mixer",
+      "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une Casserole d'eau bouillante. Passer au Mixeur en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
+    appliance: "Mixeur",
     ustensils: ["couteau", "économe", "Cuillère en bois"],
   },
   {
@@ -1258,8 +1258,8 @@ const recipes = [
     ],
     time: 25,
     description:
-      "Éplucher les légumes, les couper en morceaux et les mettre à cuire dans une cocotte minute environ 15 minutes. Mixer en ajoutant le beurre, la crème. Ajouter le cumun et la noix de muscade.",
-    appliance: "Mixer",
+      "Éplucher les légumes, les couper en morceaux et les mettre à cuire dans une cocotte minute environ 15 minutes. Mixeur en ajoutant le beurre, la crème. Ajouter le cumun et la noix de muscade.",
+    appliance: "Mixeur",
     ustensils: ["cocotte minute", "couteau", "Cuillère en bois"],
   },
   {
@@ -1458,7 +1458,7 @@ const recipes = [
     time: 20,
     description:
       "Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des Verres. Mettre au frais",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["Fouet", "Spatule", "Verres"],
   },
   {
@@ -1551,7 +1551,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "farine",
+        ingredient: "Farine",
         quantity: 40,
         unit: "grammes",
       },
@@ -1559,7 +1559,7 @@ const recipes = [
     time: 15,
     description:
       "Mélanger la farine et le beurre fondu en ajoutant le lait peu à peu. Ajouter du sucre après la cuisson. Bien mélanger. Ajouter le chocolat en morceaux et laisser chauffer 8 minutes en mélangeant avec une Cuillère en bois. Mettre dans des Verres",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["Cuillère en bois"],
   },
   {
@@ -1590,7 +1590,7 @@ const recipes = [
     time: 30,
     description:
       "Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
-    appliance: "Casserolle",
+    appliance: "Casserole",
     ustensils: ["Fouet", "Saladier"],
   },
   {
@@ -1655,14 +1655,14 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Crème Fraîche",
+        ingredient: "Crème fraîche",
         quantity: 20,
         unit: "cl",
       },
     ],
     time: 5,
     description:
-      "Mélanger le jus de citron avec le sucre et la mascarpone. Ajouter la crème fraiche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
+      "Mélanger le jus de citron avec le sucre et la mascarpone. Ajouter la Crème fraîche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
     appliance: "Saladier",
     ustensils: ["Fouet", "Verres", "Cuillère en bois"],
   },
@@ -1708,7 +1708,7 @@ const recipes = [
     servings: 4,
     ingredients: [
       {
-        ingredient: "Bananes",
+        ingredient: "Banane",
         quantity: 2,
       },
       {

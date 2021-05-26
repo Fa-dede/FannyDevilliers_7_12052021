@@ -21,15 +21,16 @@
     </header>
     <nav class="menuNav">
         <input class="menuNav--searchInput" type="search"
-            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
-            onclick="javascript:this.value=' '"><i class="menuNav--searchInput_glass fas fa-search"></i>
+            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"><i
+            class="menuNav--searchInput_glass fas fa-search"></i>
+        <span id="under-input-message"></span>
         <div class="menuNav--buttons-selected-container"></div>
 
         <!-- Incrémentation Tags en JS  -->
 
         <div id="dropDownMenus-container">
 
-            <div class="dropDownMenus-container_1">
+            <div class="dropDownMenus-container dropDownMenus-container_1">
 
                 <div id="container-1_inactive" class="dropDownMenus-container_inactive">
 
@@ -40,7 +41,7 @@
 
                 <div id="container-1_active" class="dropDownMenus--input_active dropDownMenus--input_active_ingredient">
 
-                    <input type="text" class="dropDownMenus--input_active_title"
+                    <input type="search" class="dropDownMenus--input_active_title"
                         placeholder="Rechercher un ingrédient"><i id="chevron-up-ingredient"
                         class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
                     <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ing">
@@ -50,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="dropDownMenus-container_2">
+            <div class="dropDownMenus-container dropDownMenus-container_2">
                 <div id="container-2_inactive">
                     <input type="text" id="appareil-input"
                         class="dropDownMenus dropDownMenus--input dropDownMenus--input_appareil" placeholder="Appareil">
@@ -59,8 +60,8 @@
                 </div>
 
                 <div id="container-2_active" class="dropDownMenus--input_active dropDownMenus--input_active_appliance">
-                    <input type="text" class="dropDownMenus--input_active_title" placeholder="Rechercher un appareil"><i
-                        id="chevron-up-appliance"
+                    <input type="search" class="dropDownMenus--input_active_title"
+                        placeholder="Rechercher un appareil"><i id="chevron-up-appliance"
                         class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
                     <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_appliance">
                         <!-- Incrémentation <li> en JS -->
@@ -68,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="dropDownMenus-container_3">
+            <div class="dropDownMenus-container dropDownMenus-container_3">
 
                 <div id="container-3_inactive">
                     <input type="text" id="ustensiles-input"
@@ -78,7 +79,7 @@
                 </div>
 
                 <div id="container-3_active" class="dropDownMenus--input_active dropDownMenus--input_active_ustensils">
-                    <input type="text" class="dropDownMenus--input_active_title"
+                    <input type="search" class="dropDownMenus--input_active_title"
                         placeholder="Rechercher un ustensile"><i id="chevron-up-ustensils"
                         class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
                     <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ustensils">
@@ -89,128 +90,7 @@
         </div>
 
         <main id="recipes-container">
-            <article id="1st-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Limonade de Coco</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 10 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Mettre les glaçons à votre goût dans le
-                            blender,
-                            ajouter
-                            le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                            consistence
-                            désirée</p>
-                    </div>
-                </footer>
-            </article>
-            <article id="2nd-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Poisson Cru à la tahitienne</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 60 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un
-                            plat
-                            et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond).
-                            Laisser reposer au réfrigérateur au moins 2 heures. ...</p>
-                    </div>
-                </footer>
-            </article>
-            <article id="3rd-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Poulet coco réunionnais</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 80 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Découper le poulet en morceaux, les faire
-                            dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser
-                            cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, ...</p>
-                    </div>
-                </footer>
-            </article>
-            <article id="4th-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Limonade de Coco</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 10 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Mettre les glaçons à votre goût dans le
-                            blender,
-                            ajouter
-                            le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la
-                            consistence
-                            désirée</p>
-                    </div>
-                </footer>
-            </article>
-            <article id="5th-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Poisson Cru à la tahitienne</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 60 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Découper le thon en dés, mettre dans un
-                            plat
-                            et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond).
-                            Laisser reposer au réfrigérateur au moins 2 heures. ...</p>
-                    </div>
-                </footer>
-            </article>
-            <article id="6th-Article" class="recipe">
-                <div class="recipe--background"></div>
-                <footer class="recipe--information">
-                    <h1 class="recipe--information_name">Poulet coco réunionnais</h1>
-                    <h2 class="recipe--information_time"><i class="far fa-clock"></i> 80 min</h2>
-                    <div class="recipe--information--text">
-                        <ul class="recipe--information--text_list">
-                            <li><strong>Lait de coco</strong> : 400 ml</li>
-                            <li><strong>Jus de citron</strong> : 2</li>
-                            <li><strong>Crème de coco</strong> : 4 cuillères</li>
-                            <li><strong>Sucre</strong> : 20g</li>
-                            <li><strong>Glaçons</strong> : 2</li>
-                        </ul>
-                        <p class="recipe--information--text_instructions">Découper le poulet en morceaux, les faire
-                            dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser
-                            cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, ...</p>
-                    </div>
-                </footer>
-            </article>
+
 
 
         </main>

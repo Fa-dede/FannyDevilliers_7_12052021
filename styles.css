@@ -14,6 +14,22 @@ body {
   margin-bottom: 20px;
 }
 
+#under-input-message {
+  display: none;
+  z-index: 9;
+  margin: 0 5px;
+  border: 1px solid #e7e7e7;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 22px;
+  color: grey;
+}
+
+.autocompleteSearch {
+  list-style-type: none;
+  cursor: pointer;
+}
+
 .menuNav--searchInput {
   width: 100%;
   background-color: #e7e7e7;
@@ -106,19 +122,21 @@ body {
 .dropDownMenus--input_active {
   display: none;
   margin-right: 15px;
+  min-width: 250px;
   padding: 20px;
   border-radius: 5px;
-  max-height: auto;
 }
 .dropDownMenus--input_active_title {
   border-width: 0;
   width: 90%;
   background-color: transparent;
   font-size: 18px;
-  opacity: 50%;
+  color: #fff;
+  outline-color: white;
 }
 .dropDownMenus--input_active_title::placeholder {
   color: #fff;
+  opacity: 50%;
 }
 .dropDownMenus--input_active_chevron {
   color: #fff;
@@ -144,7 +162,6 @@ body {
 }
 .dropDownMenus--input_active_ingredient {
   background-color: #3282f7;
-  display: block;
   width: 700px;
 }
 .dropDownMenus--input_active_appliance {

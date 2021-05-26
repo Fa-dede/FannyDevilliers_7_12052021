@@ -1,9 +1,12 @@
 import { recipes } from "./JS/datas.js";
-import {
-  ButtonListFactory,
-  displayTagAboveMenuNav,
-  closeTagAboveMenuNav,
-} from "./menuNav_tags.js";
+import { searchBarFactory } from "./main_searchbar.js";
+import { ButtonListFactory, displayTagAboveMenuNav } from "./menuNav_tags.js";
+// import { navIntoButton } from "./button_navigation.js";
+import { NavigateInButton } from "./navigation_inside_button.js";
+import { displayRecipesFactory } from "./recipes_display.js";
+
+new searchBarFactory();
+new displayRecipesFactory();
 
 let buttonIngredients = document.querySelector("#container-1_inactive");
 let listOfIngredients = document.querySelector(
@@ -23,12 +26,18 @@ let listOfUstensils = document.querySelector(
 );
 let buttonUstensilsExpanded = document.querySelector("#container-3_active");
 
+let arrayOfIngredientsDisplayed = [];
+let arrayOfApplianceDisplayed = [];
+let arrayOfUstensilsDisplayed = [];
+
 new ButtonListFactory(
   "ingredient",
   buttonIngredients,
   listOfIngredients,
   "ingredients",
-  buttonIngredientExpanded
+  buttonIngredientExpanded,
+  arrayOfIngredientsDisplayed,
+  "container-1_active"
 );
 
 new ButtonListFactory(
@@ -36,7 +45,9 @@ new ButtonListFactory(
   buttonAppliance,
   listOfAppliance,
   "appliances",
-  buttonApplianceExpanded
+  buttonApplianceExpanded,
+  arrayOfApplianceDisplayed,
+  "container-2_active"
 );
 
 new ButtonListFactory(
@@ -44,7 +55,30 @@ new ButtonListFactory(
   buttonUstensils,
   listOfUstensils,
   "ustensils",
-  buttonUstensilsExpanded
+  buttonUstensilsExpanded,
+  arrayOfUstensilsDisplayed,
+  "container-3_active"
 );
 
 displayTagAboveMenuNav();
+
+// navIntoButton(
+//   listOfIngredients,
+//   buttonIngredientExpanded,
+//   arrayOfIngredientsDisplayed
+// );
+
+// navIntoButton(
+//   listOfAppliance,
+//   buttonApplianceExpanded,
+//   arrayOfApplianceDisplayed
+// );
+// navIntoButton(
+//   listOfUstensils,
+//   buttonUstensilsExpanded,
+//   arrayOfUstensilsDisplayed
+// );
+
+new NavigateInButton(listOfIngredients, arrayOfIngredientsDisplayed);
+new NavigateInButton(listOfAppliance, arrayOfApplianceDisplayed);
+new NavigateInButton(listOfUstensils, arrayOfUstensilsDisplayed);
