@@ -15,7 +15,7 @@ class searchBarFactory {
   searchInsideMainSearchBar() {
     this.inputOfMainSearchBar.addEventListener("input", (e) => {
       this.articlesArray.forEach((article) => {
-        article.style.display = "flex";
+        article.style.display = "block";
       });
       let errorMessage = document.querySelector("#error-message");
       if (errorMessage) {
