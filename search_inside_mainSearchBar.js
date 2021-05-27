@@ -35,7 +35,7 @@ class MainSearchFactory {
             "afterend",
             `
         <main>
-        <p id = "error-message" >Oups...Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p></main>`
+        <p id = "error-message" >Oups...<i class="far fa-dizzy"></i><br>Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p></main>`
           );
         }
       }

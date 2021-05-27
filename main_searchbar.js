@@ -93,6 +93,7 @@ class searchBarFactory {
       suggestion.addEventListener("click", (e) => {
         input.value = e.target.innerHTML;
         input.value = input.value.trim(); //supprime les espaces au début et à la fin de la chaîne de caractère
+        input.focus();
         this.messageUnderInput.style.display = "none";
       });
     });

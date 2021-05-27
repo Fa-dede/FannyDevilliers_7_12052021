@@ -205,6 +205,15 @@ body {
 #container-1_active {
   display: none;
 }
+
+#error-message {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 20px;
+  i {
+    font-size: 30px;
+  }
+}
 #recipes-container {
   padding-top: 90px;
   display: flex;
