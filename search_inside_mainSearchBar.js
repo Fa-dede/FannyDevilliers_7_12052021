@@ -1,3 +1,6 @@
+import { AdvancedSearchWithTags } from "./advanced_search.js";
+import { normalizeValues } from "./function_normalizeValue.js";
+
 class MainSearchFactory {
   constructor(input, articles) {
     this.input = input;
@@ -20,14 +23,18 @@ class MainSearchFactory {
         articles.forEach((article) => {
           let articleFooter =
             article.firstChild.nextElementSibling.nextElementSibling;
-          let footerValuesNorm = this.normalizeValues(articleFooter.innerHTML);
-          let inputValueNorm = this.normalizeValues(input.value);
+          let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
+          let inputValueNorm = normalizeValues(input.value);
           if (!footerValuesNorm.includes(inputValueNorm)) {
             article.style.display = "none";
           } else {
             restArticles.push(article);
           }
         });
+
+        // Lance la recherche avancée avec les articles
+        // new AdvancedSearchWithTags(restArticles);
+
         if (restArticles.length < 1) {
           console.log("no match");
           let menuNav = document.querySelector(".menuNav");
@@ -40,13 +47,6 @@ class MainSearchFactory {
         }
       }
     });
-  }
-
-  normalizeValues(value) {
-    return value
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
   }
 }
 

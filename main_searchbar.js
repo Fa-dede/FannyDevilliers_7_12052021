@@ -1,5 +1,6 @@
 import { recipes } from "./JS/datas.js";
 import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
+import { normalizeValues } from "./function_normalizeValue.js";
 
 class searchBarFactory {
   constructor(articlesArray) {
@@ -20,7 +21,7 @@ class searchBarFactory {
       this.messageUnderInput.innerHTML = "";
       if (e.target.value.length > 2) {
         this.messageUnderInput.style.display = "block";
-        let inputValueNormalize = this.normalizeValues(e.target.value);
+        let inputValueNormalize = normalizeValues(e.target.value);
         let nameOfRecipe;
         let ingredientOfRecipe;
         let descriptionOfRecipe;
@@ -28,16 +29,16 @@ class searchBarFactory {
         let applianceOfRecipe;
 
         recipes.forEach((recipe) => {
-          nameOfRecipe = this.normalizeValues(recipe.name);
+          nameOfRecipe = normalizeValues(recipe.name);
 
           recipe.ingredients.forEach((ingredient) => {
-            ingredientOfRecipe = this.normalizeValues(ingredient.ingredient);
+            ingredientOfRecipe = normalizeValues(ingredient.ingredient);
           });
-          descriptionOfRecipe = this.normalizeValues(recipe.description);
-          applianceOfRecipe = this.normalizeValues(recipe.appliance);
+          descriptionOfRecipe = normalizeValues(recipe.description);
+          applianceOfRecipe = normalizeValues(recipe.appliance);
 
           recipe.ustensils.forEach((ustensil) => {
-            ustensilsOfRecipe = this.normalizeValues(ustensil);
+            ustensilsOfRecipe = normalizeValues(ustensil);
           });
 
           this.searchInsideRecipes(
@@ -103,13 +104,6 @@ class searchBarFactory {
     if (this.messageUnderInput.children.length < 1) {
       this.messageUnderInput.style.display = "none";
     }
-  }
-
-  normalizeValues(value) {
-    return value
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
   }
 }
 

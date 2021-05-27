@@ -1,4 +1,5 @@
 import { recipes } from "./JS/datas.js";
+import { AdvancedSearchWithTags } from "./advanced_search.js";
 
 // Génère les élements de type TAGS dans les listes déroulantes
 class ButtonListFactory {
@@ -113,15 +114,15 @@ class ButtonListFactory {
       ) {
         buttonActive.style.display = "none";
         buttonInactive.style.display = "block";
-        document
-          .querySelectorAll(".dropDownMenus--input_active_title")
-          .forEach((input) => {
-            input.value = null;
-            let list = [...document.querySelectorAll(".name-of-item")];
-            list.forEach((li) => {
-              li.style.display = "flex";
-            });
-          });
+        // document
+        //   .querySelectorAll(".dropDownMenus--input_active_title")
+        //   .forEach((input) => {
+        //     input.value = null;
+        // let list = [...document.querySelectorAll(".name-of-item")];
+        // list.forEach((li) => {
+        //   li.style.display = "flex";
+        // });
+        // });
       }
     });
   }
@@ -129,7 +130,7 @@ class ButtonListFactory {
 
 // AFFICHE LES TAGS SELECTIONNES AU DESSUS DES BOUTONS
 
-const displayTagAboveMenuNav = () => {
+const displayTagAboveMenuNav = (articles) => {
   let arrayOfCrossCloseAbove = [];
   let tagSelectedContainer = document.querySelector(
     ".menuNav--buttons-selected-container"
@@ -141,13 +142,15 @@ const displayTagAboveMenuNav = () => {
       tagSelectedContainer.insertAdjacentHTML(
         "afterbegin",
         `
-              <button class="menuNav--buttonTagSelected">${e.target.innerHTML}
-              <img class="menuNav--buttonTagSelected__crossClose" src="./img/cross-close.svg" alt="supprimer le tags">
+              <button class="menuNav--buttonTagSelected"> <p>${e.target.innerHTML}</p> <img class="menuNav--buttonTagSelected__crossClose" src="./img/cross-close.svg" alt="supprimer le tags">
           </button>`
       );
       let buttonForTagsAbove = document.querySelector(
         ".menuNav--buttonTagSelected"
       );
+
+      //Lance la recherche avancée par tag au clic sur un tag
+      new AdvancedSearchWithTags(articles, item);
 
       // DEFINIT LA COULEUR DE L'ARRIERE-PLAN DU BOUTON DE TAG SELECTIONNE
       const getBgColorOfTagsAbove = (e, className, color) => {
