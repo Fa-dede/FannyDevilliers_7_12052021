@@ -33,10 +33,15 @@ class MainSearchFactory {
         });
 
         // Lance la recherche avancée avec les articles
-        // new AdvancedSearchWithTags(restArticles);
+        // let items = [...document.querySelectorAll(".name-of-item")];
+        // items.forEach((item) => {
+        //   item.addEventListener("click", (e) => {
+        //     console.log(e.target);
+        //     new AdvancedSearchWithTags(restArticles, e.target);
+        //   });
+        // });
 
         if (restArticles.length < 1) {
-          console.log("no match");
           let menuNav = document.querySelector(".menuNav");
           menuNav.insertAdjacentHTML(
             "afterend",

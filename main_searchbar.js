@@ -17,6 +17,10 @@ class searchBarFactory {
       this.articlesArray.forEach((article) => {
         article.style.display = "flex";
       });
+      let errorMessage = document.querySelector("#error-message");
+      if (errorMessage) {
+        errorMessage.remove();
+      }
       this.messageUnderInput.style.display = "none";
       this.messageUnderInput.innerHTML = "";
       if (e.target.value.length > 2) {

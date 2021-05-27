@@ -5,6 +5,7 @@ class AdvancedSearchWithTags {
   constructor(articles, item) {
     this.articles = articles;
     this.item = item;
+    console.log(this.item);
     // this.addEveryRecipe();
     this.removeEveryRecipe();
     this.sortByTagName();
@@ -80,6 +81,7 @@ class AdvancedSearchWithTags {
       });
     };
 
+    //ajoute les éléments dans les listes déroulantes en fonctions des recettes restantes sur la page
     addCorrespondantItems(ingredients);
     addCorrespondantItems(appliances);
     addCorrespondantItems(ustensils);
