@@ -90,7 +90,7 @@ class ButtonListFactory {
     buttonInactive.addEventListener("click", (e) => {
       buttonInactive.style.display = "none";
       buttonActive.style.display = "block";
-      buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT
+      buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT / faire buttonActive.querySelector('.')
       const closeActiveInputByChevron = (containerId, chevronId) => {
         if (buttonActive.id === containerId) {
           document.querySelector(chevronId).addEventListener("click", (e) => {
@@ -175,6 +175,10 @@ const displayTagAboveMenuNav = (articles) => {
 const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
   arrayOfCrossCloseAbove.forEach((cross) => {
     cross.addEventListener("click", (e) => {
+      let container = document.querySelector(
+        ".menuNav--buttons-selected-container"
+      );
+
       e.target.parentNode.remove();
     });
   });

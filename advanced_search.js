@@ -5,18 +5,22 @@ class AdvancedSearchWithTags {
   constructor(articles, item) {
     this.articles = articles;
     this.item = item;
-    console.log(this.item);
-    // this.addEveryRecipe();
+    this.containerForTagAbove = document.querySelector(
+      ".menuNav--buttons-selected-container"
+    );
     this.removeEveryRecipe();
     this.sortByTagName();
     this.removefilter();
   }
 
-  //   addEveryRecipe() {
-  //     this.articles.forEach((article) => {
-  //       article.style.display = "flex";
-  //     });
-  //   }
+  addEveryRecipe() {
+    console.log(this.containerForTagAbove.children.length);
+    if (this.containerForTagAbove.children.length < 1) {
+      this.articles.forEach((article) => {
+        article.style.display = "flex";
+      });
+    }
+  }
 
   removeEveryRecipe() {
     this.articles.forEach((article) => {
@@ -24,15 +28,12 @@ class AdvancedSearchWithTags {
     });
   }
 
-  //   addRecipeThatCorrespond(recipes) {}
-
-  sortByTagName() {
-    let itemValueNorm = normalizeValues(this.item.innerHTML).trim();
-    //permet de stocker les ingrédients restants après filtre
-    let ingredientsRemaining = [];
-    let appliancesRemaining = [];
-    let ustensilsRemaining = [];
-
+  displayArticlesRemaining(
+    itemValueNorm,
+    ingredientsRemaining,
+    appliancesRemaining,
+    ustensilsRemaining
+  ) {
     this.articles.forEach((article) => {
       // si le innerHTML de l'article inclus la valeur de l'item, alors affiche l'article
       let articleInfo = normalizeValues(article.innerHTML);
@@ -47,6 +48,21 @@ class AdvancedSearchWithTags {
         );
       }
     });
+  }
+
+  sortByTagName() {
+    let itemValueNorm = normalizeValues(this.item.innerHTML).trim();
+    //permet de stocker les ingrédients restants après filtre
+    let ingredientsRemaining = [];
+    let appliancesRemaining = [];
+    let ustensilsRemaining = [];
+
+    this.displayArticlesRemaining(
+      itemValueNorm,
+      ingredientsRemaining,
+      appliancesRemaining,
+      ustensilsRemaining
+    );
 
     //Applique la suppression des valeurs en double dans les tableaux des éléments restants
     ingredientsRemaining = this.removeDuplicatedValues(ingredientsRemaining);
@@ -119,6 +135,7 @@ class AdvancedSearchWithTags {
     let crossesClose = [
       ...document.querySelectorAll(".menuNav--buttonTagSelected__crossClose"),
     ];
+
     crossesClose.forEach((cross) => {
       cross.addEventListener("click", (e) => {
         let valueOfButtonClosed =

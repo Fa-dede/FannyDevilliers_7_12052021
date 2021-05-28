@@ -5,7 +5,6 @@ class MainSearchFactory {
   constructor(input, articles) {
     this.input = input;
     this.articles = articles;
-
     this.searchByKeyPressEnter(this.input, this.articles);
   }
 

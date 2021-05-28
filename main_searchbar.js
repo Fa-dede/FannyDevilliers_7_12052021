@@ -9,6 +9,7 @@ class searchBarFactory {
     this.articlesArray = articlesArray;
 
     this.searchInsideMainSearchBar();
+
     new MainSearchFactory(this.inputOfMainSearchBar, this.articlesArray);
   }
 
@@ -61,21 +62,47 @@ class searchBarFactory {
   }
 
   searchInsideRecipes(inputValue, title, ingredient, appliance, ustensil) {
-    if (title.includes(inputValue)) {
-      this.displaySuggestion(title);
-    } else if (ingredient.includes(inputValue)) {
-      this.displaySuggestion(ingredient);
-    } else if (appliance.includes(inputValue)) {
-      this.displaySuggestion(appliance);
-      this.eraseDuplicateNamesInList();
-    } else if (ustensil.includes(inputValue)) {
-      this.displaySuggestion(ustensil);
-      this.eraseDuplicateNamesInList();
+    // if (title.includes(inputValue)) {
+    //   this.displaySuggestion(title);
+    // }
+    // if (ingredient.includes(inputValue)) {
+    //   this.displaySuggestion(ingredient);
+    // }
+    // if (appliance.includes(inputValue)) {
+    //   this.displaySuggestion(appliance);
+    //   this.eraseDuplicateNamesInList();
+    // }
+    // if (ustensil.includes(inputValue)) {
+    //   this.displaySuggestion(ustensil);
+    //   this.eraseDuplicateNamesInList();
+    // }
+    if (
+      title.includes(inputValue) ||
+      ingredient.includes(inputValue) ||
+      appliance.includes(inputValue) ||
+      ustensil.includes(inputValue)
+    ) {
+      if (title.includes(inputValue)) {
+        this.displaySuggestion(title);
+      }
+      if (ingredient.includes(inputValue)) {
+        this.displaySuggestion(ingredient);
+        this.eraseDuplicateNamesInList(ingredient);
+      }
+      if (appliance.includes(inputValue)) {
+        this.displaySuggestion(appliance);
+        this.eraseDuplicateNamesInList();
+      }
+      if (ustensil.includes(inputValue)) {
+        this.displaySuggestion(ustensil);
+        this.eraseDuplicateNamesInList();
+      }
     }
   }
 
   displaySuggestion(value) {
     this.messageUnderInput.innerHTML += `<li class="autocompleteSearch" tabIndex='0'> ${value} </li>`;
+    //créer un tableau et à la fin afficher les données
   }
 
   eraseDuplicateNamesInList() {

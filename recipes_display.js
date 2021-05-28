@@ -12,7 +12,7 @@ class displayRecipesFactory {
     });
   }
 
-  createRecipeDOMElement(recipe, ingredientinfos) {
+  createRecipeDOMElement(recipe, ingredientinfos, applianceAndUstensilsInfos) {
     this.recipesContainer.insertAdjacentHTML(
       "afterbegin",
       `
@@ -26,6 +26,7 @@ class displayRecipesFactory {
                       ${ingredientinfos}
                       </ul>
                       <p class="recipe--information--text_instructions">${recipe.description}</p>
+                      <p style = 'display : none'> ${recipe.appliance} ${recipe.ustensils} </p>
                   </div>
               </footer>
           </article>
@@ -35,6 +36,7 @@ class displayRecipesFactory {
 
   addUlDOMElements(recipe) {
     let ingredientinfos = "";
+
     recipe.ingredients.forEach((ingredient) => {
       if (ingredient.quantity) {
         if (ingredient.unit && ingredient.quantity) {
@@ -46,6 +48,7 @@ class displayRecipesFactory {
         ingredientinfos += `<li><strong>${ingredient.ingredient}</strong></li>`;
       }
     });
+
     return this.createRecipeDOMElement(recipe, ingredientinfos);
   }
 }
