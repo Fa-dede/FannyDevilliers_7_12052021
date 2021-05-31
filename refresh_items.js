@@ -7,11 +7,8 @@ const refreshRecipes = (articles, restArticles, input) => {
     let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
     let inputValueNorm = normalizeValues(input);
 
-    console.log(inputValueNorm);
-
     if (!footerValuesNorm.includes(inputValueNorm)) {
       article.classList.add("hidden");
-      article.style.display = "none";
     }
   });
   returnDisplayedArticles(restArticles, articles);
@@ -21,7 +18,6 @@ const refreshRecipes = (articles, restArticles, input) => {
 const returnDisplayedArticles = (restArticles, articles) => {
   articles.forEach((article) => {
     if (article.className !== "recipe hidden") {
-      console.log(article);
       restArticles.push(article);
     }
   });
@@ -31,7 +27,9 @@ const returnDisplayedArticles = (restArticles, articles) => {
 
 const refreshDropDownMenus = (restArticles) => {
   eraseAllTags();
-  displayCorrespondantTagsOnly(restArticles);
+  let items = [...document.querySelectorAll(".name-of-item")];
+  displayCorrespondantTagsOnly(restArticles, items);
+  eraseValuesAlreadySelected(items);
 };
 
 const eraseAllTags = () => {
@@ -41,10 +39,10 @@ const eraseAllTags = () => {
   });
 };
 
-const displayCorrespondantTagsOnly = (restArticles) => {
-  let items = [...document.querySelectorAll(".name-of-item")];
+const displayCorrespondantTagsOnly = (restArticles, items) => {
   let nameOfItem;
 
+  //Refresh Tags that correspond to the recipes filters remaining
   restArticles.forEach((article) => {
     let infos =
       article.firstChild.nextElementSibling.nextElementSibling.innerHTML;
@@ -59,6 +57,34 @@ const displayCorrespondantTagsOnly = (restArticles) => {
   });
 };
 
-const eraseValuesAlreadySelected = () => {};
+const eraseValuesAlreadySelected = (items) => {
+  let selectedButtons = [
+    ...document.querySelectorAll(".menuNav--buttonTagSelected"),
+  ];
+  let inputValue = document.querySelector(".menuNav--searchInput").value;
+  inputValue = normalizeValues(inputValue);
+  let nameOfItem;
+  items.forEach((item) => {
+    nameOfItem = normalizeValues(item.innerHTML).trim();
+    if (nameOfItem === inputValue) {
+      item.style.display = "none";
+    }
+  });
+
+  selectedButtons.forEach((button) => {
+    let buttonName = button.firstChild.nextElementSibling.innerText;
+    buttonName = normalizeValues(buttonName);
+    console.log(buttonName);
+    items.forEach((item) => {
+      nameOfItem = item.innerHTML;
+      nameOfItem = normalizeValues(nameOfItem).trim();
+      if (nameOfItem === buttonName) {
+        item.style.display = "none";
+      }
+    });
+  });
+};
+
+const refreshElementAfterRemoveTags = () => {};
 
 export { refreshRecipes };

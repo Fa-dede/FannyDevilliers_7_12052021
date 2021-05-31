@@ -332,7 +332,7 @@ const recipes = [
     ],
     time: 15,
     description:
-      "Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamique et l'huile d'olives à votre gout.",
+      "Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamique et l'Huile d'olive à votre gout.",
     appliance: "Saladier",
     ustensils: ["Cuillère en bois", "couteau"],
   },
@@ -584,7 +584,7 @@ const recipes = [
         unit: "tiges",
       },
       {
-        ingredient: "Huile d'olives",
+        ingredient: "Huile d'olive",
         quantity: 2,
         unit: "Cuillère à soupe",
       },
@@ -933,7 +933,7 @@ const recipes = [
         quantity: 1,
       },
       {
-        ingredient: "Huile d'olives",
+        ingredient: "Huile d'olive",
       },
       {
         ingredient: "Oignon",
@@ -1317,7 +1317,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Huile d'olives",
+        ingredient: "Huile d'olive",
         quantity: 25,
         unit: "cl",
       },

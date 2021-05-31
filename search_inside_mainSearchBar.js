@@ -1,9 +1,11 @@
 import { searchBarFactory } from "./main_searchbar.js";
 import { refreshRecipes } from "./refresh_items.js";
+import { removeSpaceUnderInput } from "./main_searchbar.js";
 
 class MainSearchFactory {
   constructor(input, articles) {
     this.input = input;
+    this.underInputMessage = document.querySelector("#under-input-message");
     this.articles = articles;
     this.searchByKeyPressEnter(this.input, this.articles);
   }
@@ -15,6 +17,7 @@ class MainSearchFactory {
   searchByKeyPressEnter(input, articles) {
     input.addEventListener("keyup", (e) => {
       if (e.key == "Enter") {
+        this.underInputMessage.style.display = "none";
         research(e, articles, input);
       }
     });

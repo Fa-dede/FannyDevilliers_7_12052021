@@ -1,6 +1,7 @@
 import { recipes } from "./JS/datas.js";
 import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
 import { normalizeValues } from "./function_normalizeValue.js";
+import { refreshRecipes } from "./refresh_items.js";
 
 // AUTOCOMPLETION
 
@@ -10,16 +11,19 @@ class searchBarFactory {
     this.messageUnderInput = document.querySelector("#under-input-message");
     this.articlesArray = articlesArray;
 
-    this.searchInsideMainSearchBar();
+    this.searchInsideMainSearchBar(this.inputOfMainSearchBar);
 
     new MainSearchFactory(this.inputOfMainSearchBar, this.articlesArray);
   }
 
-  searchInsideMainSearchBar() {
-    this.inputOfMainSearchBar.addEventListener("input", (e) => {
-      this.articlesArray.forEach((article) => {
-        article.style.display = "block";
-      });
+  searchInsideMainSearchBar(input) {
+    input.addEventListener("input", (e) => {
+      if (input.value.length < 1) {
+        this.articlesArray.forEach((article) => {
+          article.classList.remove("hidden");
+        });
+      }
+
       let errorMessage = document.querySelector("#error-message");
       if (errorMessage) {
         errorMessage.remove();
@@ -58,7 +62,7 @@ class searchBarFactory {
         });
 
         this.addSuggestionToInputByClic();
-        this.removeSpaceUnderInput();
+        removeSpaceUnderInput(this.messageUnderInput);
       }
     });
   }
@@ -115,15 +119,20 @@ class searchBarFactory {
         input.value = input.value.trim(); //supprime les espaces au début et à la fin de la chaîne de caractère
         input.focus();
         this.messageUnderInput.style.display = "none";
+        let restArticles = [];
+        restArticles.splice(0, restArticles.length);
+        refreshRecipes(this.articlesArray, restArticles, input.value);
       });
     });
-  }
-
-  removeSpaceUnderInput() {
-    if (this.messageUnderInput.children.length < 1) {
-      this.messageUnderInput.style.display = "none";
-    }
   }
 }
 
 export { searchBarFactory };
+
+const removeSpaceUnderInput = (messageUnderInput) => {
+  if (messageUnderInput.children.length < 1) {
+    messageUnderInput.style.display = "none";
+  }
+};
+
+export { removeSpaceUnderInput };

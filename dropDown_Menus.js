@@ -158,8 +158,6 @@ const displayTagAboveMenuNav = (articles) => {
 
       refreshRecipes(articles, restArticles, valueOfItemSelected);
 
-      console.log(restArticles);
-
       // DEFINIT LA COULEUR DE L'ARRIERE-PLAN DU BOUTON DE TAG SELECTIONNE
       const getBgColorOfTagsAbove = (e, className, color) => {
         if (e.target.parentNode.className.includes(className)) {
