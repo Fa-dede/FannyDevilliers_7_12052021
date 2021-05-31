@@ -128,7 +128,7 @@ const recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Oeuf dur",
+        ingredient: "Oeufs dur",
         quantity: 2,
       },
       {
@@ -202,7 +202,7 @@ const recipes = [
         quantity: 3,
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: "2",
       },
       {
@@ -258,7 +258,7 @@ const recipes = [
     ],
     time: 50,
     description:
-      "Etaler la pate dans les Moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
+      "Etaler la pâte dans les Moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
     appliance: "Four",
     ustensils: ["Moule à tartelettes (6)", "Casserole"],
   },
@@ -299,7 +299,7 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un Moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour déMouler. Servir avec une boule de glace pour plus de gourmandise.",
+      "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeufs et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un Moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour déMouler. Servir avec une boule de glace pour plus de gourmandise.",
     appliance: "Four",
     ustensils: ["Moule à gateaux", "Casserole"],
   },
@@ -468,7 +468,7 @@ const recipes = [
         unit: "Cuillère à soupe",
       },
       {
-        ingredient: "huile d'olive",
+        ingredient: "Huile d'olive",
         quantity: 2,
         unit: "Cuillère à soupe",
       },
@@ -514,7 +514,7 @@ const recipes = [
     ],
     time: 100,
     description:
-      "Mélanger la farine et les oeufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
+      "Mélanger la farine et les Oeufss, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
     appliance: "Four",
     ustensils: ["Poêle à frire", "Couteau"],
   },
@@ -524,7 +524,7 @@ const recipes = [
     servings: 10,
     ingredients: [
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -591,7 +591,7 @@ const recipes = [
     ],
     time: 45,
     description:
-      "Faire cuire les pâtes si vous n'avez pas de penne des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
+      "Faire cuire les pâtes si vous n'avez pas de penne des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pâtes et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
     appliance: "Four",
     ustensils: ["Plat à gratin", "Couteau", "râpe à fromage"],
   },
@@ -690,7 +690,7 @@ const recipes = [
   },
   {
     id: 20,
-    name: "Pates Carbonara",
+    name: "Pâtes Carbonara",
     servings: 5,
     ingredients: [
       {
@@ -721,7 +721,7 @@ const recipes = [
     ],
     time: 30,
     description:
-      "Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
+      "Faire cuire les pâtes comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
     appliance: "Sauteuse",
     ustensils: ["râpe à fromage", "Cuillère en bois"],
   },
@@ -762,7 +762,7 @@ const recipes = [
     ],
     time: 30,
     description:
-      "Cuisiner la viande hachée dans une poêle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la Crème fraîche à la viande hachée. Serivir.",
+      "Cuisiner la viande hachée dans une poêle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pâtes le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pâtes sont cuites, ajouter la Crème fraîche à la viande hachée. Serivir.",
     appliance: "Casserole",
     ustensils: ["Cuillère en bois", "Louche", "Couteau"],
   },
@@ -798,7 +798,7 @@ const recipes = [
     ],
     time: 30,
     description:
-      "Faire fondre le chocolat et le beurre au bain marie. Dans un Saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le Moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
+      "Faire fondre le chocolat et le beurre au bain marie. Dans un Saladier battre les Oeufss avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le Moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
     appliance: "Four",
     ustensils: ["Moule à gateaux", "Fouet", "Casserole"],
   },
@@ -823,7 +823,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -839,7 +839,7 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Etaler la pate dans un Moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
+      "Etaler la pâte dans un Moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
     appliance: "Four",
     ustensils: ["Moule à gateaux", "rouleau à patisserie", "Fouet"],
   },
@@ -879,7 +879,7 @@ const recipes = [
     ],
     time: 40,
     description:
-      "Découper le concombre et les tomates en dés, les mettre dans un Saladier avec le mais et les miettes de poisson, ajouter les pates. Ajouter la mayonnaise. Mélanger le tout et servir frais.",
+      "Découper le concombre et les tomates en dés, les mettre dans un Saladier avec le mais et les miettes de poisson, ajouter les pâtes. Ajouter la mayonnaise. Mélanger le tout et servir frais.",
     appliance: "Saladier",
     ustensils: ["Couteau", "Cuillère en bois"],
   },
@@ -909,7 +909,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 1,
       },
     ],
@@ -961,7 +961,7 @@ const recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 1,
       },
       {
@@ -1060,7 +1060,7 @@ const recipes = [
     servings: 4,
     ingredients: [
       {
-        ingredient: "Pois Cassé",
+        ingredient: "Pois Cassés",
         quantity: 500,
         unit: "grammes",
       },
@@ -1358,7 +1358,7 @@ const recipes = [
         unit: "cl",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -1400,7 +1400,7 @@ const recipes = [
     ],
     time: 40,
     description:
-      "Découper les pommes en dés. Mélanger dans un Saladier la farine, le sucre et le beurre. Bien mélanger. Beurrer le moule et ajouter les pommes. Par dessus, placer la pate que vous avez obtenu. Cuire 20 minutes au four",
+      "Découper les pommes en dés. Mélanger dans un Saladier la farine, le sucre et le beurre. Bien mélanger. Beurrer le moule et ajouter les pommes. Par dessus, placer la pâte que vous avez obtenu. Cuire 20 minutes au four",
     appliance: "Four",
     ustensils: ["Saladier", "Couteau", "Fouet"],
   },
@@ -1441,7 +1441,7 @@ const recipes = [
     servings: 4,
     ingredients: [
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -1472,7 +1472,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -1512,7 +1512,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 3,
       },
       {
@@ -1521,7 +1521,7 @@ const recipes = [
     ],
     time: 50,
     description:
-      "Préchauffer le fours à 200°. Étaler la pate. La mettre dans un Moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pate. Au four 30 minutes. Bon appetit ",
+      "Préchauffer le fours à 200°. Étaler la pâte. La mettre dans un Moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appetit ",
     appliance: "Four",
     ustensils: ["rouleau à patisserie", "Moule à tarte", "Presse citron"],
   },
@@ -1573,7 +1573,7 @@ const recipes = [
         unit: "cl",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 2,
       },
       {
@@ -1614,7 +1614,7 @@ const recipes = [
         unit: "sachets",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 4,
       },
       {
@@ -1747,7 +1747,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 6,
       },
       {
@@ -1768,7 +1768,7 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Préparer la frangipane : Mélanger le sucre la poudre d'amandes, le beurre et les oeufs. Étaler la moitié de la pate feuilletée et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+      "Préparer la frangipane : Mélanger le sucre la poudre d'amandes, le beurre et les oeufs. Étaler la moitié de la pâte feuilletée et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pâte feuilletée. Mettre au four 30 minutes",
     appliance: "Four",
     ustensils: ["rouleau à patisserie", "Fouet"],
   },

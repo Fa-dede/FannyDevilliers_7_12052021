@@ -1,16 +1,13 @@
 import { normalizeValues } from "./function_normalizeValue.js";
 //ALGO DE RECHERCHE 1
 const refreshRecipes = (articles, restArticles, input) => {
-  articles.forEach((article) => {
-    let articleFooter =
-      article.firstChild.nextElementSibling.nextElementSibling;
-    let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
-    let inputValueNorm = normalizeValues(input);
-
-    if (!footerValuesNorm.includes(inputValueNorm)) {
-      article.classList.add("hidden");
-    }
-  });
+  // ALGO 1 +  TEST PERFORMANCE
+  let t0 = performance.now();
+  searchAlgo1(articles, input);
+  let t1 = performance.now();
+  console.log(
+    "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
+  );
   returnDisplayedArticles(restArticles, articles);
   refreshDropDownMenus(restArticles);
 };
@@ -102,7 +99,6 @@ const eraseValuesAlreadySelected = (items) => {
 };
 
 const refreshElementAfterRemoveTags = (restArticles) => {
-  console.log("refresh");
   let articles = [...document.querySelectorAll(".recipe")];
   let buttons = [...document.querySelectorAll(".menuNav--buttonTagSelected")];
 
@@ -115,8 +111,10 @@ const refreshElementAfterRemoveTags = (restArticles) => {
 
   refreshRecipesAfterRemovingTags(articles, restArticles, buttons);
 
-  // Affiche l'intégralité des recettes si
-  if (buttons.length < 1) {
+  // Affiche l'intégralité des recettes si il n'y a plus de tags et que l'input est vide
+  let input = document.querySelector(".menuNav--searchInput");
+  if (buttons.length < 1 && input.value === "") {
+    // Faire le comportement si l'input est vide et s'il est rempli
     articles.forEach((article) => {
       article.classList.remove("hidden");
     });
@@ -143,9 +141,17 @@ const refreshRecipesAfterRemovingTags = (articles, restArticles, buttons) => {
   refreshDropDownMenus(restArticles);
 };
 
-const removeEndMessageInUl = () => {
-  let ul = [...document.querySelectorAll(".dropDownMenus--input_active_list")];
-  ul.forEach((ul) => {});
+const searchAlgo1 = (articles, input) => {
+  articles.forEach((article) => {
+    let articleFooter =
+      article.firstChild.nextElementSibling.nextElementSibling;
+    let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
+    let inputValueNorm = normalizeValues(input);
+
+    if (!footerValuesNorm.includes(inputValueNorm)) {
+      article.classList.add("hidden");
+    }
+  });
 };
 
-export { refreshRecipes, refreshElementAfterRemoveTags, removeEndMessageInUl };
+export { refreshRecipes, refreshElementAfterRemoveTags };

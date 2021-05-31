@@ -8,6 +8,7 @@ class MainSearchFactory {
     this.underInputMessage = document.querySelector("#under-input-message");
     this.articles = articles;
     this.searchByKeyPressEnter(this.input, this.articles);
+    // this.focusOnMainSearchbarAfterWindowOnload();
   }
 
   focusOnMainSearchbarAfterWindowOnload() {
@@ -31,14 +32,7 @@ const research = (e, articles, input) => {
   let errorMessage = document.querySelector("#error-message");
   if (errorMessage) errorMessage.remove();
 
-  // ALGO 1 +  TEST PERFORMANCE
-  // let t0 = performance.now();
-  // console.log(t0);
   refreshRecipes(articles, restArticles, input.value);
-  // let t1 = performance.now();
-  // console.log(
-  //   "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
-  // );
 
   if (restArticles.length < 1) {
     displayErrorMessage();
