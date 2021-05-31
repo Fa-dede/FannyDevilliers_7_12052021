@@ -91,6 +91,11 @@ const eraseValuesAlreadySelected = (items) => {
         let p = document.createElement("p");
         p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
         ul.appendChild(p);
+      } else {
+        let message = ul.querySelector(".end-message-tags");
+        if (message) {
+          message.remove();
+        }
       }
     });
   });
@@ -122,8 +127,6 @@ const refreshElementAfterRemoveTags = (restArticles) => {
   }
 };
 
-export { refreshRecipes, refreshElementAfterRemoveTags };
-
 const refreshRecipesAfterRemovingTags = (articles, restArticles, buttons) => {
   articles.forEach((article) => {
     let articleFooter =
@@ -139,3 +142,10 @@ const refreshRecipesAfterRemovingTags = (articles, restArticles, buttons) => {
   returnDisplayedArticles(restArticles, articles);
   refreshDropDownMenus(restArticles);
 };
+
+const removeEndMessageInUl = () => {
+  let ul = [...document.querySelectorAll(".dropDownMenus--input_active_list")];
+  ul.forEach((ul) => {});
+};
+
+export { refreshRecipes, refreshElementAfterRemoveTags, removeEndMessageInUl };

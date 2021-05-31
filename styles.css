@@ -206,8 +206,15 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: stretch;
   gap: 50px;
+}
+
+.background_picture {
+  object-fit: cover;
+  width: 100%;
+  height: 178px;
+  border-radius: 5px 5px 0 0;
 }
 
 .recipe {
@@ -222,9 +229,11 @@ body {
 }
 .recipe--information {
   background-color: #e7e7e7;
+  margin-top: -3px;
   border-radius: 0 0 5px 5px;
   padding: 20px 20px 0px 20px;
   min-height: 180px;
+  max-height: 180px;
 }
 .recipe--information_name {
   display: inline;
@@ -254,6 +263,11 @@ body {
   display: inline;
   margin: unset;
   font-size: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  max-height: 120px;
+  text-overflow: ellipsis;
+  padding-left: 10px;
 }
 
 .hidden {

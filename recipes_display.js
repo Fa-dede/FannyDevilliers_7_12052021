@@ -17,7 +17,9 @@ class displayRecipesFactory {
       "afterbegin",
       `
         <article class="recipe">
-              <div class="recipe--background"></div>
+               
+                <img class = 'background_picture' src = "./img/recipes/${recipe.name}.jpg">
+              
               <footer class="recipe--information">
                   <h1 class="recipe--information_name">${recipe.name}</h1>
                   <h2 class="recipe--information_time"><i class="far fa-clock"></i> ${recipe.time} min</h2>
