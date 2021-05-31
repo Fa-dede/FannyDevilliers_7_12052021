@@ -74,12 +74,23 @@ const eraseValuesAlreadySelected = (items) => {
   selectedButtons.forEach((button) => {
     let buttonName = button.firstChild.nextElementSibling.innerText;
     buttonName = normalizeValues(buttonName);
-    console.log(buttonName);
     items.forEach((item) => {
       nameOfItem = item.innerHTML;
       nameOfItem = normalizeValues(nameOfItem).trim();
       if (nameOfItem === buttonName) {
         item.style.display = "none";
+      }
+    });
+
+    //create end message of searching
+    let ul = [
+      ...document.querySelectorAll(".dropDownMenus--input_active_list"),
+    ];
+    ul.forEach((ul) => {
+      if (ul.innerText === "") {
+        let p = document.createElement("p");
+        p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
+        ul.appendChild(p);
       }
     });
   });
