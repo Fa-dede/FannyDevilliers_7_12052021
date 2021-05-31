@@ -1,10 +1,9 @@
 import { recipes } from "./JS/datas.js";
 import { searchBarFactory } from "./main_searchbar.js";
-import { ButtonListFactory, displayTagAboveMenuNav } from "./menuNav_tags.js";
+import { ButtonListFactory, displayTagAboveMenuNav } from "./dropDown_Menus.js";
 // import { navIntoButton } from "./button_navigation.js";
 import { NavigateInButton } from "./navigation_inside_button.js";
 import { displayRecipesFactory } from "./recipes_display.js";
-import { AdvancedSearchWithTags } from "./advanced_search.js";
 
 new displayRecipesFactory();
 
@@ -63,23 +62,6 @@ new ButtonListFactory(
   arrayOfUstensilsDisplayed,
   "container-3_active"
 );
-
-// navIntoButton(
-//   listOfIngredients,
-//   buttonIngredientExpanded,
-//   arrayOfIngredientsDisplayed
-// );
-
-// navIntoButton(
-//   listOfAppliance,
-//   buttonApplianceExpanded,
-//   arrayOfApplianceDisplayed
-// );
-// navIntoButton(
-//   listOfUstensils,
-//   buttonUstensilsExpanded,
-//   arrayOfUstensilsDisplayed
-// );
 
 new NavigateInButton(listOfIngredients, arrayOfIngredientsDisplayed);
 new NavigateInButton(listOfAppliance, arrayOfApplianceDisplayed);

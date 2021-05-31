@@ -1,5 +1,6 @@
+import { normalizeValues } from "./function_normalizeValue.js";
 import { recipes } from "./JS/datas.js";
-import { AdvancedSearchWithTags } from "./advanced_search.js";
+import { refreshRecipes } from "./refresh_items.js";
 
 // Génère les élements de type TAGS dans les listes déroulantes
 class ButtonListFactory {
@@ -149,8 +150,15 @@ const displayTagAboveMenuNav = (articles) => {
         ".menuNav--buttonTagSelected"
       );
 
+      let valueOfItemSelected = normalizeValues(e.target.innerHTML).trim();
+      let restArticles = [];
+      restArticles.splice(0, restArticles.length);
+
       //Lance la recherche avancée par tag au clic sur un tag
-      new AdvancedSearchWithTags(articles, item);
+
+      refreshRecipes(articles, restArticles, valueOfItemSelected);
+
+      console.log(restArticles);
 
       // DEFINIT LA COULEUR DE L'ARRIERE-PLAN DU BOUTON DE TAG SELECTIONNE
       const getBgColorOfTagsAbove = (e, className, color) => {
@@ -180,6 +188,7 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
       );
 
       e.target.parentNode.remove();
+      //Lance la déselection des tags de recherches avancée et actualise les recettes + tags
     });
   });
 };

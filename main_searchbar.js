@@ -2,6 +2,8 @@ import { recipes } from "./JS/datas.js";
 import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
 import { normalizeValues } from "./function_normalizeValue.js";
 
+// AUTOCOMPLETION
+
 class searchBarFactory {
   constructor(articlesArray) {
     this.inputOfMainSearchBar = document.querySelector(".menuNav--searchInput");
@@ -62,20 +64,6 @@ class searchBarFactory {
   }
 
   searchInsideRecipes(inputValue, title, ingredient, appliance, ustensil) {
-    // if (title.includes(inputValue)) {
-    //   this.displaySuggestion(title);
-    // }
-    // if (ingredient.includes(inputValue)) {
-    //   this.displaySuggestion(ingredient);
-    // }
-    // if (appliance.includes(inputValue)) {
-    //   this.displaySuggestion(appliance);
-    //   this.eraseDuplicateNamesInList();
-    // }
-    // if (ustensil.includes(inputValue)) {
-    //   this.displaySuggestion(ustensil);
-    //   this.eraseDuplicateNamesInList();
-    // }
     if (
       title.includes(inputValue) ||
       ingredient.includes(inputValue) ||

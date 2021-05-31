@@ -256,6 +256,10 @@ body {
   font-size: 12px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 1472px) {
   .recipe {
     max-width: unset;
