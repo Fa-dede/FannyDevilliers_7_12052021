@@ -1076,7 +1076,7 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Mettre tous les ingrédients dans une cocotte. ajouter de l'eau pour recouvrir l'ensemble et laisser cuirre à petit feur pour 1 heure. Passer au Mixeur. Salez, poivrez. C'est prêt",
+      "Mettre tous les ingrédients dans une cocotte. ajouter de l'eau pour recouvrir l'ensemble et laisser cuir à petit feu pour 1 heure. Passer au Mixeur. Salez, poivrez. C'est prêt",
     appliance: "Mixeur",
     ustensils: ["Casserole", "Cuillère en bois"],
   },
@@ -1768,7 +1768,7 @@ const recipes = [
     ],
     time: 60,
     description:
-      "Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un Moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+      "Préparer la frangipane : Mélanger le sucre la poudre d'amande, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un Moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
     appliance: "Four",
     ustensils: ["rouleau à patisserie", "Fouet"],
   },

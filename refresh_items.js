@@ -96,6 +96,46 @@ const eraseValuesAlreadySelected = (items) => {
   });
 };
 
-const refreshElementAfterRemoveTags = () => {};
+const refreshElementAfterRemoveTags = (restArticles) => {
+  console.log("refresh");
+  let articles = [...document.querySelectorAll(".recipe")];
+  let buttons = [...document.querySelectorAll(".menuNav--buttonTagSelected")];
 
-export { refreshRecipes };
+  buttons.forEach((button) => {
+    let buttonValue = normalizeValues(button.innerText);
+    articles.forEach((article) => {
+      article.classList.remove("hidden");
+    });
+  });
+
+  refreshRecipesAfterRemovingTags(articles, restArticles, buttons);
+
+  // Affiche l'intégralité des recettes si
+  if (buttons.length < 1) {
+    articles.forEach((article) => {
+      article.classList.remove("hidden");
+    });
+    let items = [...document.querySelectorAll(".name-of-item")];
+    items.forEach((item) => {
+      item.style.display = "flex";
+    });
+  }
+};
+
+export { refreshRecipes, refreshElementAfterRemoveTags };
+
+const refreshRecipesAfterRemovingTags = (articles, restArticles, buttons) => {
+  articles.forEach((article) => {
+    let articleFooter =
+      article.firstChild.nextElementSibling.nextElementSibling;
+    let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
+    buttons.forEach((button) => {
+      let buttonValueNorm = normalizeValues(button.innerText);
+      if (!footerValuesNorm.includes(buttonValueNorm)) {
+        article.classList.add("hidden");
+      }
+    });
+  });
+  returnDisplayedArticles(restArticles, articles);
+  refreshDropDownMenus(restArticles);
+};

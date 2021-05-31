@@ -1,6 +1,9 @@
 import { normalizeValues } from "./function_normalizeValue.js";
 import { recipes } from "./JS/datas.js";
-import { refreshRecipes } from "./refresh_items.js";
+import {
+  refreshRecipes,
+  refreshElementAfterRemoveTags,
+} from "./refresh_items.js";
 
 // Génère les élements de type TAGS dans les listes déroulantes
 class ButtonListFactory {
@@ -187,6 +190,9 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
 
       e.target.parentNode.remove();
       //Lance la déselection des tags de recherches avancée et actualise les recettes + tags
+      let restArticles = [];
+      restArticles.splice(0, restArticles.length);
+      refreshElementAfterRemoveTags(restArticles);
     });
   });
 };
