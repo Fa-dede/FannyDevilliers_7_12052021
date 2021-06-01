@@ -118,15 +118,6 @@ class ButtonListFactory {
       ) {
         buttonActive.style.display = "none";
         buttonInactive.style.display = "block";
-        // document
-        //   .querySelectorAll(".dropDownMenus--input_active_title")
-        //   .forEach((input) => {
-        //     input.value = null;
-        // let list = [...document.querySelectorAll(".name-of-item")];
-        // list.forEach((li) => {
-        //   li.style.display = "flex";
-        // });
-        // });
       }
     });
   }
@@ -192,7 +183,19 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
       //Lance la déselection des tags de recherches avancée et actualise les recettes + tags
       let restArticles = [];
       restArticles.splice(0, restArticles.length);
-      refreshElementAfterRemoveTags(restArticles);
+      let input = document.querySelector(".menuNav--searchInput");
+      if (!input.value) {
+        refreshElementAfterRemoveTags(restArticles);
+      }
+      let buttons = [
+        ...document.querySelectorAll(".menuNav--buttonTagSelected"),
+      ];
+      let articles = [...document.querySelectorAll(".recipe")];
+      if (input.value && buttons.length < 1) {
+        articles.forEach((article) => {
+          article.classList.remove("hidden");
+        });
+      }
     });
   });
 };

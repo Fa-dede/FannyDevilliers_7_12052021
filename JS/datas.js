@@ -128,7 +128,7 @@ const recipes = [
         quantity: 2,
       },
       {
-        ingredient: "Oeufs dur",
+        ingredient: "Oeufs",
         quantity: 2,
       },
       {
@@ -184,7 +184,7 @@ const recipes = [
     ],
     time: 45,
     description:
-      "Etaler la pâte feuilletée aux dimensions du Moule, étaler la moutarde sur la pâte feuilletée, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de Crème fraîche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
+      "Étaler la pâte feuilletée aux dimensions du moule, étaler la moutarde sur la pâte feuilletée, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de Crème fraîche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
     appliance: "Four",
     ustensils: ["Moule à tarte", "Râpe à fromage", "Couteau"],
   },
@@ -211,7 +211,7 @@ const recipes = [
         unit: "cl",
       },
       {
-        ingredient: "Sucre en Poudre",
+        ingredient: "Sucre en poudre",
         quantity: 100,
         unit: "grammes",
       },
@@ -283,11 +283,11 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 2,
       },
       {
-        ingredient: "Sucre en Poudre",
+        ingredient: "Sucre en poudre",
         quantity: "110",
         unit: "grammes",
       },
@@ -494,7 +494,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 1,
       },
       {
@@ -660,7 +660,7 @@ const recipes = [
     servings: 4,
     ingredients: [
       {
-        ingredient: "Kiwi",
+        ingredient: "Kiwis",
         quantity: 4,
       },
       {
@@ -787,7 +787,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Oeuf",
+        ingredient: "Oeufs",
         quantity: 4,
       },
       {
@@ -1507,7 +1507,7 @@ const recipes = [
         unit: "grammes",
       },
       {
-        ingredient: "Beurre fondu",
+        ingredient: "Beurre",
         quantity: 100,
         unit: "grammes",
       },
@@ -1521,7 +1521,7 @@ const recipes = [
     ],
     time: 50,
     description:
-      "Préchauffer le fours à 200°. Étaler la pâte. La mettre dans un Moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appetit ",
+      "Préchauffer le fours à 200°. Étaler la pâte. La mettre dans un moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appetit ",
     appliance: "Four",
     ustensils: ["rouleau à patisserie", "Moule à tarte", "Presse citron"],
   },

@@ -113,7 +113,7 @@ const refreshElementAfterRemoveTags = (restArticles) => {
 
   // Affiche l'intégralité des recettes si il n'y a plus de tags et que l'input est vide
   let input = document.querySelector(".menuNav--searchInput");
-  if (buttons.length < 1 && input.value === "") {
+  if (buttons.length < 1 && !input.value) {
     // Faire le comportement si l'input est vide et s'il est rempli
     articles.forEach((article) => {
       article.classList.remove("hidden");
@@ -154,4 +154,10 @@ const searchAlgo1 = (articles, input) => {
   });
 };
 
-export { refreshRecipes, refreshElementAfterRemoveTags };
+export {
+  refreshRecipes,
+  refreshElementAfterRemoveTags,
+  returnDisplayedArticles,
+  refreshDropDownMenus,
+  refreshRecipesAfterRemovingTags,
+};

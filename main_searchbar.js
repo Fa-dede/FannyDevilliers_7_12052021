@@ -1,7 +1,13 @@
 import { recipes } from "./JS/datas.js";
 import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
 import { normalizeValues } from "./function_normalizeValue.js";
-import { refreshRecipes } from "./refresh_items.js";
+import {
+  refreshRecipes,
+  returnDisplayedArticles,
+  refreshElementAfterRemoveTags,
+  refreshDropDownMenus,
+  refreshRecipesAfterRemovingTags,
+} from "./refresh_items.js";
 
 // AUTOCOMPLETION
 
@@ -19,8 +25,30 @@ class searchBarFactory {
   searchInsideMainSearchBar(input) {
     input.addEventListener("input", (e) => {
       if (input.value.length < 1) {
+        let restArticles = [];
+        restArticles = restArticles.splice(0, restArticles.length);
+        let buttons = [
+          ...document.querySelectorAll(".menuNav--buttonTagSelected"),
+        ];
         this.articlesArray.forEach((article) => {
           article.classList.remove("hidden");
+        });
+
+        //Actualise les recettes uniquement en fonctions des tags si l'input est supprimé
+        buttons.forEach((button) => {
+          console.log(button);
+          let buttonValueNorm = normalizeValues(button.innerText);
+          this.articlesArray.forEach((article) => {
+            let articleFooter =
+              article.firstChild.nextElementSibling.nextElementSibling;
+            let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
+            let buttonValueNorm = normalizeValues(button.innerText);
+            if (!footerValuesNorm.includes(buttonValueNorm)) {
+              article.classList.add("hidden");
+            }
+          });
+          returnDisplayedArticles(restArticles, this.articlesArray);
+          refreshDropDownMenus(restArticles);
         });
       }
 
