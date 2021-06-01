@@ -132,7 +132,8 @@ body {
   background-color: transparent;
   font-size: 18px;
   color: #fff;
-  outline-color: white;
+  text-transform: capitalize;
+  outline-width: 0;
 }
 .dropDownMenus--input_active_title::placeholder {
   color: #fff;

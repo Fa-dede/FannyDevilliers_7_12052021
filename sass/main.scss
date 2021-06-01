@@ -140,7 +140,8 @@ body {
         background-color: transparent;
         font-size: 18px;
         color: #fff;
-        outline-color: white;
+        text-transform: capitalize;
+        outline-width: 0;
 
         &::placeholder {
           color: #fff;
