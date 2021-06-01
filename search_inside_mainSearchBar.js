@@ -8,7 +8,7 @@ class MainSearchFactory {
     this.underInputMessage = document.querySelector("#under-input-message");
     this.articles = articles;
     this.searchByKeyPressEnter(this.input, this.articles);
-    // this.focusOnMainSearchbarAfterWindowOnload();
+    this.focusOnMainSearchbarAfterWindowOnload();
   }
 
   focusOnMainSearchbarAfterWindowOnload() {

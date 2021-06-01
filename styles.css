@@ -206,7 +206,7 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: stretch;
+  justify-content: start;
   gap: 50px;
 }
 
@@ -219,7 +219,7 @@ body {
 
 .recipe {
   min-width: 380px;
-  max-width: 380px;
+  width: 30%;
   min-height: 300px;
 }
 .recipe--background {
