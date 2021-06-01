@@ -4,9 +4,7 @@ import { normalizeValues } from "./function_normalizeValue.js";
 import {
   refreshRecipes,
   returnDisplayedArticles,
-  refreshElementAfterRemoveTags,
   refreshDropDownMenus,
-  refreshRecipesAfterRemovingTags,
 } from "./refresh_items.js";
 
 // AUTOCOMPLETION
@@ -50,12 +48,6 @@ class searchBarFactory {
           returnDisplayedArticles(restArticles, this.articlesArray);
           refreshDropDownMenus(restArticles);
         });
-
-        // //Actualise les dropdown items si l'input est supprimé
-        // else {
-        //   returnDisplayedArticles(restArticles, this.articlesArray);
-        //   refreshDropDownMenus(restArticles);
-        // }
       }
 
       let errorMessage = document.querySelector("#error-message");
