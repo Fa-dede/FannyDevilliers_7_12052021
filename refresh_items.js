@@ -1,9 +1,11 @@
 import { normalizeValues } from "./function_normalizeValue.js";
+import { recipes } from "./JS/datas.js";
 //ALGO DE RECHERCHE 1
 const refreshRecipes = (articles, restArticles, input) => {
   // ALGO 1 +  TEST PERFORMANCE
   let t0 = performance.now();
-  searchAlgo1(articles, input);
+  // searchAlgo1(articles, input);
+  searchAlgo2(input);
   let t1 = performance.now();
   // console.log(
   //   "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
@@ -152,6 +154,14 @@ const searchAlgo1 = (articles, input) => {
       article.classList.add("hidden");
     }
   });
+};
+
+const searchAlgo2 = (inputValue) => {
+  // inputValue = normalizeValues(inputValue);
+  let recipesToDisplay = recipes.filter((recipe) =>
+    recipe.name.includes(inputValue)
+  );
+  console.log(recipesToDisplay);
 };
 
 export {
