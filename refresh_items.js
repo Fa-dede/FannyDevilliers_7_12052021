@@ -5,9 +5,9 @@ const refreshRecipes = (articles, restArticles, input) => {
   let t0 = performance.now();
   searchAlgo1(articles, input);
   let t1 = performance.now();
-  console.log(
-    "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
-  );
+  // console.log(
+  //   "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
+  // );
   returnDisplayedArticles(restArticles, articles);
   refreshDropDownMenus(restArticles);
 };
@@ -84,7 +84,7 @@ const eraseValuesAlreadySelected = (items) => {
       ...document.querySelectorAll(".dropDownMenus--input_active_list"),
     ];
     ul.forEach((ul) => {
-      if (ul.innerText === "") {
+      if (ul.innerText == "") {
         let p = document.createElement("p");
         p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
         ul.appendChild(p);

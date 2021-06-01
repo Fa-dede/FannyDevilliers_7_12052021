@@ -35,8 +35,8 @@ class searchBarFactory {
         });
 
         //Actualise les recettes uniquement en fonctions des tags si l'input est supprimé
+
         buttons.forEach((button) => {
-          console.log(button);
           let buttonValueNorm = normalizeValues(button.innerText);
           this.articlesArray.forEach((article) => {
             let articleFooter =
@@ -50,6 +50,12 @@ class searchBarFactory {
           returnDisplayedArticles(restArticles, this.articlesArray);
           refreshDropDownMenus(restArticles);
         });
+
+        // //Actualise les dropdown items si l'input est supprimé
+        // else {
+        //   returnDisplayedArticles(restArticles, this.articlesArray);
+        //   refreshDropDownMenus(restArticles);
+        // }
       }
 
       let errorMessage = document.querySelector("#error-message");

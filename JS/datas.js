@@ -593,7 +593,7 @@ const recipes = [
     description:
       "Faire cuire les pâtes si vous n'avez pas de penne des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pâtes et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
     appliance: "Four",
-    ustensils: ["Plat à gratin", "Couteau", "râpe à fromage"],
+    ustensils: ["Plat à gratin", "Couteau", "Râpe à fromage"],
   },
   {
     id: 17,
@@ -723,7 +723,7 @@ const recipes = [
     description:
       "Faire cuire les pâtes comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
     appliance: "Sauteuse",
-    ustensils: ["râpe à fromage", "Cuillère en bois"],
+    ustensils: ["Râpe à fromage", "Cuillère en bois"],
   },
   {
     id: 21,
@@ -1155,7 +1155,7 @@ const recipes = [
     description:
       "Beurrer les tranches de pain, ajouter entre 2 tranches de pain de mie 1 tranche d'émental, une de blanc de dinde, et une autre d'emmental. Dans un récipient, mélanger le gruyère rappé avec le lait et la noix de muscade. Mettre sur les croque monsieux. Placer au four durnat 10 minutes.",
     appliance: "Four",
-    ustensils: ["râpe à fromage", "Cuillère à Soupe", "Couteau"],
+    ustensils: ["Râpe à fromage", "Cuillère à Soupe", "Couteau"],
   },
   {
     id: 33,
@@ -1300,7 +1300,7 @@ const recipes = [
     description:
       "Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les gouts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
     appliance: "Four",
-    ustensils: ["Plat à gratin", "râpe à fromage", "Fouet"],
+    ustensils: ["Plat à gratin", "Râpe à fromage", "Fouet"],
   },
   {
     id: 37,
@@ -1523,7 +1523,7 @@ const recipes = [
     description:
       "Préchauffer le fours à 200°. Étaler la pâte. La mettre dans un moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appetit ",
     appliance: "Four",
-    ustensils: ["rouleau à patisserie", "Moule à tarte", "Presse citron"],
+    ustensils: ["Rouleau à patisserie", "Moule à tarte", "Presse citron"],
   },
   {
     id: 44,
@@ -1700,7 +1700,7 @@ const recipes = [
     description:
       "Étaler la pâte a pizza. Écraser les tomates pelées, les étaler sur la pâte, ajouter les lardons et les champignons. Ajouter le gruyère et passer au four à 220° durant 20 minutes",
     appliance: "Four",
-    ustensils: ["rouleau à patisserie", "râpe à fromage", "Couteau"],
+    ustensils: ["Rouleau à patisserie", "Râpe à fromage", "Couteau"],
   },
   {
     id: 49,
@@ -1770,7 +1770,7 @@ const recipes = [
     description:
       "Préparer la frangipane : Mélanger le sucre la poudre d'amandes, le beurre et les oeufs. Étaler la moitié de la pâte feuilletée et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pâte feuilletée. Mettre au four 30 minutes",
     appliance: "Four",
-    ustensils: ["rouleau à patisserie", "Fouet"],
+    ustensils: ["Rouleau à patisserie", "Fouet"],
   },
 ];
 

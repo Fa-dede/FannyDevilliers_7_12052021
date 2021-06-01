@@ -3,6 +3,8 @@ import { recipes } from "./JS/datas.js";
 import {
   refreshRecipes,
   refreshElementAfterRemoveTags,
+  returnDisplayedArticles,
+  refreshDropDownMenus,
 } from "./refresh_items.js";
 
 // Génère les élements de type TAGS dans les listes déroulantes
@@ -194,6 +196,15 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
       if (input.value && buttons.length < 1) {
         articles.forEach((article) => {
           article.classList.remove("hidden");
+          let articleFooter =
+            article.firstChild.nextElementSibling.nextElementSibling;
+          let footerValuesNorm = normalizeValues(articleFooter.innerHTML);
+          let inputValue = normalizeValues(input.value);
+          if (!footerValuesNorm.includes(inputValue)) {
+            article.classList.add("hidden");
+          }
+          returnDisplayedArticles(restArticles, articles);
+          refreshDropDownMenus(restArticles);
         });
       }
     });
