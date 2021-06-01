@@ -45,9 +45,9 @@ class searchBarFactory {
               article.classList.add("hidden");
             }
           });
-          returnDisplayedArticles(restArticles, this.articlesArray);
-          refreshDropDownMenus(restArticles);
         });
+        returnDisplayedArticles(restArticles, this.articlesArray);
+        refreshDropDownMenus(restArticles);
       }
 
       let errorMessage = document.querySelector("#error-message");
