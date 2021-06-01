@@ -4,8 +4,8 @@ import { recipes } from "./JS/datas.js";
 const refreshRecipes = (articles, restArticles, input) => {
   // ALGO 1 +  TEST PERFORMANCE
   let t0 = performance.now();
-  // searchAlgo1(articles, input);
-  searchAlgo2(input);
+  searchAlgo1(articles, input);
+  // searchAlgo2(input);
   let t1 = performance.now();
   // console.log(
   //   "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
@@ -157,7 +157,7 @@ const searchAlgo1 = (articles, input) => {
 };
 
 const searchAlgo2 = (inputValue) => {
-  // inputValue = normalizeValues(inputValue);
+  inputValue = normalizeValues(inputValue);
   let recipesToDisplay = recipes.filter((recipe) =>
     recipe.name.includes(inputValue)
   );
