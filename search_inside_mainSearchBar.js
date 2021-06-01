@@ -16,11 +16,11 @@ class MainSearchFactory {
   }
 
   searchByKeyPressEnter(input, articles) {
-    input.addEventListener("keyup", (e) => {
-      if (e.key == "Enter") {
-        this.underInputMessage.style.display = "none";
-        research(e, articles, input);
-      }
+    input.addEventListener("input", (e) => {
+      // if (e.key == "Enter") { // PAS D'AUTOCOMPLETION
+      this.underInputMessage.style.display = "none";
+      research(e, articles, input);
+      // }
     });
   }
 }
