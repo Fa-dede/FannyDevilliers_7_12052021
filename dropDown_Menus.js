@@ -121,10 +121,38 @@ class ButtonListFactory {
         }
       };
 
+      this.createMessageIfNoItemsRemainings();
+
       closeActiveInputByChevron("container-1_active", "#chevron-up-ingredient");
       closeActiveInputByChevron("container-2_active", "#chevron-up-appliance");
       closeActiveInputByChevron("container-3_active", "#chevron-up-ustensils");
     });
+  }
+
+  //Crée un message dans le dropDownMenus lorsqu'il est vide
+  createMessageIfNoItemsRemainings() {
+    let ul = [
+      ...document.querySelectorAll(
+        ".dropDownMenus--input_active_list_appliance"
+      ),
+    ];
+    let itemsClassNames = [];
+
+    ul.forEach((item) => {
+      let itemArray = [...item.children];
+      itemArray.forEach((item) => {
+        itemsClassNames.push(item.className);
+      });
+    });
+
+    console.log(itemsClassNames);
+    let itemIsHidden = (className) => className === "name-of-item hidden";
+    console.log(itemsClassNames.every(itemIsHidden));
+
+    if (itemsClassNames.every(itemIsHidden)) {
+      return (p.innerHTML = `hello`);
+    }
+    //FINIR LE MESSAGE D ERREUR !!!!!!!!!! ICIIIIIIII
   }
 
   closeDropDownMenuByClickingOutside(buttonInactive, buttonActive) {
