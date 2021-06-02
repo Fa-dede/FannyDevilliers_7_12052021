@@ -1,37 +1,36 @@
-import { recipes } from "./JS/datas.js";
-import { searchBarFactory } from "./main_searchbar.js";
+import { CreateSearchBarFactory } from "./main_searchbar.js";
 import { ButtonListFactory, displayTagAboveMenuNav } from "./dropDown_Menus.js";
-// import { navIntoButton } from "./button_navigation.js";
-import { NavigateInButton } from "./navigation_inside_button.js";
 import { displayRecipesFactory } from "./recipes_display.js";
 
+//Génère les Recettes dans le DOM
 new displayRecipesFactory();
 
+// Variable Tableau qui contient toutes les recettes générées du DOM
 let articlesArray = [...document.querySelectorAll(".recipe")];
 
-new searchBarFactory(articlesArray);
+//Crée le comportement de l'input de recherche
+new CreateSearchBarFactory(articlesArray);
 
-let buttonIngredients = document.querySelector("#container-1_inactive");
+//Différentes listes des dropDownMenus
 let listOfIngredients = document.querySelector(
   ".dropDownMenus--input_active_list_ing"
 );
-let buttonIngredientExpanded = document.querySelector("#container-1_active");
-
-let buttonAppliance = document.querySelector("#container-2_inactive");
 let listOfAppliance = document.querySelector(
   ".dropDownMenus--input_active_list_appliance"
 );
-let buttonApplianceExpanded = document.querySelector("#container-2_active");
-
-let buttonUstensils = document.querySelector("#container-3_inactive");
 let listOfUstensils = document.querySelector(
   ".dropDownMenus--input_active_list_ustensils"
 );
-let buttonUstensilsExpanded = document.querySelector("#container-3_active");
 
-let arrayOfIngredientsDisplayed = [];
-let arrayOfApplianceDisplayed = [];
-let arrayOfUstensilsDisplayed = [];
+// Boutons Inactifs
+let buttonIngredients = document.querySelector("#container-1_inactive");
+let buttonAppliance = document.querySelector("#container-2_inactive");
+let buttonUstensils = document.querySelector("#container-3_inactive");
+
+// Boutons Actifs (déployés)
+let buttonIngredientExpanded = document.querySelector("#container-1_active");
+let buttonApplianceExpanded = document.querySelector("#container-2_active");
+let buttonUstensilsExpanded = document.querySelector("#container-3_active");
 
 new ButtonListFactory(
   "ingredient",
@@ -39,7 +38,6 @@ new ButtonListFactory(
   listOfIngredients,
   "ingredients",
   buttonIngredientExpanded,
-  arrayOfIngredientsDisplayed,
   "container-1_active"
 );
 
@@ -49,7 +47,6 @@ new ButtonListFactory(
   listOfAppliance,
   "appliances",
   buttonApplianceExpanded,
-  arrayOfApplianceDisplayed,
   "container-2_active"
 );
 
@@ -59,14 +56,7 @@ new ButtonListFactory(
   listOfUstensils,
   "ustensils",
   buttonUstensilsExpanded,
-  arrayOfUstensilsDisplayed,
   "container-3_active"
 );
 
-new NavigateInButton(listOfIngredients, arrayOfIngredientsDisplayed);
-new NavigateInButton(listOfAppliance, arrayOfApplianceDisplayed);
-new NavigateInButton(listOfUstensils, arrayOfUstensilsDisplayed);
-
 displayTagAboveMenuNav(articlesArray);
-
-// new AdvancedSearchWithTags(articlesArray);

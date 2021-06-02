@@ -140,7 +140,7 @@ body {
         background-color: transparent;
         font-size: 18px;
         color: #fff;
-        text-transform: capitalize;
+        // text-transform: capitalize;
         outline-width: 0;
 
         &::placeholder {
@@ -286,6 +286,9 @@ body {
 }
 
 .hidden {
+  display: none;
+}
+.erase-temporarly {
   display: none;
 }
 

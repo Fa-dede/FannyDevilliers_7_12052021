@@ -1,5 +1,10 @@
-import { normalizeValues } from "./function_normalizeValue.js";
+import {
+  normalizeValues,
+  sortByAlphabeticsOrder,
+} from "./function_normalizeValue.js";
 import { recipes } from "./JS/datas.js";
+import { NavigateInButton } from "./navigation_inside_button.js";
+
 import {
   refreshRecipes,
   refreshElementAfterRemoveTags,
@@ -12,24 +17,24 @@ class ButtonListFactory {
   constructor(
     name,
     button,
-    buttonExpanded,
+    listOfItems,
     nameOfClass,
     buttonForDisplay,
-    arrayOfItemsDisplayedInList,
     inactiveContainerID
   ) {
     this.name = name;
     this.button = button;
-    this.buttonExpanded = buttonExpanded;
+    this.listOfItems = listOfItems;
     this.nameOfClass = nameOfClass;
     this.buttonForDisplay = buttonForDisplay;
-    this.arrayOfItemsDisplayedInList = arrayOfItemsDisplayedInList;
     this.crossCloseButton = [];
     this.allIngredients = [];
     this.allAppliances = [];
     this.allUstensils = [];
     this.arrayOfChevronUp = [];
     this.inactiveContainerID = inactiveContainerID;
+
+    this.articlesArray = [...document.querySelectorAll(".recipe")];
     //METHODES APPELEES
 
     this.addTagsToButton(this.nameOfClass);
@@ -43,6 +48,8 @@ class ButtonListFactory {
     this.eraseDuplicateItem(this.allUstensils);
 
     this.openNavigationList(button, buttonForDisplay);
+
+    new NavigateInButton(this.listOfItems, this.articlesArray);
 
     this.closeDropDownMenuByClickingOutside(button, buttonForDisplay);
   }
@@ -79,13 +86,12 @@ class ButtonListFactory {
     eraseDuplicatedValues();
   }
 
+  // Trie les items des listes dans l'ordre alphabétique + les génère dans le DOM
   generateItemsListInDOM(array) {
-    array = array.sort((a, b) => {
-      return a > b ? 1 : -1;
-    });
+    sortByAlphabeticsOrder(array);
 
     array.forEach((item) => {
-      this.buttonExpanded.innerHTML += `
+      this.listOfItems.innerHTML += `
       <li tabIndex = "0" class ="name-of-item" title="${item}">${item}
       </li>`;
     });
@@ -94,6 +100,15 @@ class ButtonListFactory {
   //OUVRE ET FERME LES LISTES DEROULANTES
   openNavigationList(buttonInactive, buttonActive) {
     buttonInactive.addEventListener("click", (e) => {
+      //Supprime la classe 'Erase Temporarly' à l'ouverture du menu déroulant pou afficher le reste des tags disponibles
+      let listOfItems = [...document.querySelectorAll(".name-of-item")];
+      listOfItems.forEach((li) => {
+        if (li.className == "name-of-item erase-temporarly") {
+          li.classList.remove("erase-temporarly");
+        }
+      });
+
+      //Comportement des boutons au clic
       buttonInactive.style.display = "none";
       buttonActive.style.display = "block";
       buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT / faire buttonActive.querySelector('.')
@@ -135,6 +150,9 @@ const displayTagAboveMenuNav = (articles) => {
   let arrayOfItems = [...document.querySelectorAll(".name-of-item")];
   arrayOfItems.forEach((item) => {
     item.addEventListener("click", (e) => {
+      let parentContainerOfTarget = e.target.parentNode.parentNode;
+      let inputAboveTarget =
+        parentContainerOfTarget.firstChild.nextElementSibling;
       e.preventDefault();
       tagSelectedContainer.insertAdjacentHTML(
         "afterbegin",
@@ -149,6 +167,9 @@ const displayTagAboveMenuNav = (articles) => {
       let valueOfItemSelected = normalizeValues(e.target.innerHTML).trim();
       let restArticles = [];
       restArticles.splice(0, restArticles.length);
+
+      //Supprime la valeur entrée au clic sur un tag
+      if (inputAboveTarget.value) inputAboveTarget.value = null;
 
       //Lance la recherche avancée par tag au clic sur un tag
 
@@ -177,10 +198,6 @@ const displayTagAboveMenuNav = (articles) => {
 const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
   arrayOfCrossCloseAbove.forEach((cross) => {
     cross.addEventListener("click", (e) => {
-      let container = document.querySelector(
-        ".menuNav--buttons-selected-container"
-      );
-
       e.target.parentNode.remove();
       //Lance la déselection des tags de recherches avancées et actualise les recettes + tags
       let restArticles = [];
@@ -211,4 +228,4 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
   });
 };
 
-export { ButtonListFactory, displayTagAboveMenuNav };
+export { ButtonListFactory, displayTagAboveMenuNav, closeTagAboveMenuNav };

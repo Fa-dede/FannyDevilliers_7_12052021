@@ -132,7 +132,6 @@ body {
   background-color: transparent;
   font-size: 18px;
   color: #fff;
-  text-transform: capitalize;
   outline-width: 0;
 }
 .dropDownMenus--input_active_title::placeholder {
@@ -272,6 +271,10 @@ body {
 }
 
 .hidden {
+  display: none;
+}
+
+.erase-temporarly {
   display: none;
 }
 

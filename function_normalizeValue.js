@@ -5,4 +5,10 @@ const normalizeValues = (value) => {
     .toLowerCase();
 };
 
-export { normalizeValues };
+const sortByAlphabeticsOrder = (array) => {
+  array = array.sort((a, b) => {
+    return a > b ? 1 : -1;
+  });
+};
+
+export { normalizeValues, sortByAlphabeticsOrder };

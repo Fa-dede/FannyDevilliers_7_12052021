@@ -28,7 +28,7 @@ const refreshDropDownMenus = (restArticles) => {
 const eraseAllTags = () => {
   let items = [...document.querySelectorAll(".name-of-item")];
   items.forEach((item) => {
-    item.style.display = "none";
+    item.classList.add("hidden");
   });
 };
 
@@ -44,7 +44,7 @@ const displayCorrespondantTagsOnly = (restArticles, items) => {
       nameOfItem = item.innerHTML;
       nameOfItem = normalizeValues(nameOfItem).trim();
       if (infos.includes(nameOfItem)) {
-        item.style.display = "flex";
+        item.classList.remove("hidden");
       }
     });
   });
@@ -60,7 +60,7 @@ const eraseValuesAlreadySelected = (items) => {
   items.forEach((item) => {
     nameOfItem = normalizeValues(item.innerHTML).trim();
     if (nameOfItem === inputValue) {
-      item.style.display = "none";
+      item.classList.add("hidden");
     }
   });
 
@@ -71,26 +71,26 @@ const eraseValuesAlreadySelected = (items) => {
       nameOfItem = item.innerHTML;
       nameOfItem = normalizeValues(nameOfItem).trim();
       if (nameOfItem === buttonName) {
-        item.style.display = "none";
+        item.classList.add("hidden");
       }
     });
 
     //create end message of searching
-    let ul = [
-      ...document.querySelectorAll(".dropDownMenus--input_active_list"),
-    ];
-    ul.forEach((ul) => {
-      if (ul.innerText == "") {
-        let p = document.createElement("p");
-        p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
-        ul.appendChild(p);
-      } else {
-        let message = ul.querySelector(".end-message-tags");
-        if (message) {
-          message.remove();
-        }
-      }
-    });
+    // let ul = [
+    //   ...document.querySelectorAll(".dropDownMenus--input_active_list"),
+    // ];
+    // ul.forEach((ul) => {
+    //   if (ul.innerText == "") {
+    //     let p = document.createElement("p");
+    //     p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
+    //     ul.appendChild(p);
+    //   } else {
+    //     let message = ul.querySelector(".end-message-tags");
+    //     if (message) {
+    //       message.remove();
+    //     }
+    //   }
+    // });
   });
 };
 
@@ -116,7 +116,7 @@ const refreshElementAfterRemoveTags = (restArticles) => {
     });
     let items = [...document.querySelectorAll(".name-of-item")];
     items.forEach((item) => {
-      item.style.display = "flex";
+      item.classList.remove("hidden");
     });
   }
 };
@@ -147,9 +147,6 @@ const searchAlgo1 = (articles, input) => {
     if (!footerValuesNorm.includes(inputValueNorm)) {
       article.classList.add("hidden");
     }
-    //else {
-    //   article.classList.remove("hidden");
-    // }
   });
 };
 
@@ -164,7 +161,6 @@ const searchAlgo2 = (inputValue) => {
     recipe.name = normalizeValues(recipe.name);
     recipe.appliance = normalizeValues(recipe.appliance);
     recipe.ingredients.forEach((ingredient) => {
-      // console.log(ingredient.ingredient);
       ingredient.ingredient = normalizeValues(ingredient.ingredient);
     });
   });

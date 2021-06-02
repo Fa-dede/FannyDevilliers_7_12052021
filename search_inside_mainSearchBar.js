@@ -1,4 +1,3 @@
-import { searchBarFactory } from "./main_searchbar.js";
 import { refreshRecipes } from "./refresh_items.js";
 
 class MainSearchFactory {
@@ -17,10 +16,7 @@ class MainSearchFactory {
   searchWithInput(input, articles) {
     input.addEventListener("input", (e) => {
       if (input.value.length > 2) {
-        // if (e.key == "Enter") { // PAS D'AUTOCOMPLETION
-        // this.underInputMessage.style.display = "none";
-        research(e, articles, input);
-        // }
+        research(articles, input);
       }
     });
     input.addEventListener("keyup", (e) => {
@@ -28,13 +24,13 @@ class MainSearchFactory {
         articles.forEach((article) => {
           article.classList.remove("hidden");
         });
-        research(e, articles, input);
+        research(articles, input);
       }
     });
   }
 }
 
-const research = (e, articles, input) => {
+const research = (articles, input) => {
   let restArticles = [];
   restArticles.splice(0, restArticles.length);
 
