@@ -1,13 +1,12 @@
 import { searchBarFactory } from "./main_searchbar.js";
 import { refreshRecipes } from "./refresh_items.js";
-import { removeSpaceUnderInput } from "./main_searchbar.js";
 
 class MainSearchFactory {
   constructor(input, articles) {
     this.input = input;
     this.underInputMessage = document.querySelector("#under-input-message");
     this.articles = articles;
-    this.searchByKeyPressEnter(this.input, this.articles);
+    this.searchWithInput(this.input, this.articles);
     this.focusOnMainSearchbarAfterWindowOnload();
   }
 
@@ -15,12 +14,22 @@ class MainSearchFactory {
     window.onload = this.input.focus();
   }
 
-  searchByKeyPressEnter(input, articles) {
+  searchWithInput(input, articles) {
     input.addEventListener("input", (e) => {
-      // if (e.key == "Enter") { // PAS D'AUTOCOMPLETION
-      this.underInputMessage.style.display = "none";
-      research(e, articles, input);
-      // }
+      if (input.value.length > 2) {
+        // if (e.key == "Enter") { // PAS D'AUTOCOMPLETION
+        // this.underInputMessage.style.display = "none";
+        research(e, articles, input);
+        // }
+      }
+    });
+    input.addEventListener("keyup", (e) => {
+      if (e.key === "Backspace") {
+        articles.forEach((article) => {
+          article.classList.remove("hidden");
+        });
+        research(e, articles, input);
+      }
     });
   }
 }
@@ -49,4 +58,4 @@ const displayErrorMessage = () => {
   );
 };
 
-export { MainSearchFactory };
+export { MainSearchFactory, research };

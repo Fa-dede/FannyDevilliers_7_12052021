@@ -2,14 +2,8 @@ import { normalizeValues } from "./function_normalizeValue.js";
 import { recipes } from "./JS/datas.js";
 //ALGO DE RECHERCHE 1
 const refreshRecipes = (articles, restArticles, input) => {
-  // ALGO 1 +  TEST PERFORMANCE
-  let t0 = performance.now();
   searchAlgo1(articles, input);
-  // searchAlgo2(input);
-  let t1 = performance.now();
-  // console.log(
-  //   "L'appel de searchAlgo1 a demandé " + (t1 - t0) + " millisecondes."
-  // );
+
   returnDisplayedArticles(restArticles, articles);
   refreshDropDownMenus(restArticles);
 };
@@ -153,15 +147,58 @@ const searchAlgo1 = (articles, input) => {
     if (!footerValuesNorm.includes(inputValueNorm)) {
       article.classList.add("hidden");
     }
+    //else {
+    //   article.classList.remove("hidden");
+    // }
   });
 };
 
+//SECOND ALGORITHME
 const searchAlgo2 = (inputValue) => {
+  let recipesDOM = document.querySelectorAll(".recipe");
+  recipesDOM.forEach((recipe) => {
+    recipe.remove();
+  });
   inputValue = normalizeValues(inputValue);
-  let recipesToDisplay = recipes.filter((recipe) =>
+  recipes.forEach((recipe) => {
+    recipe.name = normalizeValues(recipe.name);
+    recipe.appliance = normalizeValues(recipe.appliance);
+    recipe.ingredients.forEach((ingredient) => {
+      // console.log(ingredient.ingredient);
+      ingredient.ingredient = normalizeValues(ingredient.ingredient);
+    });
+  });
+
+  // recipes.forEach((recipe) => {
+  //   recipe.appliance = normalizeValues(recipe.appliance);
+  //   return recipe.appliance;
+  // });
+  // recipes.forEach((recipe) => {
+  //   recipe.ustensils.forEach((ustensil) => {
+  //     ustensil = normalizeValues(ustensil);
+  //   });
+  // });
+
+  let recipesToDisplayByName = recipes.filter((recipe) =>
     recipe.name.includes(inputValue)
   );
-  console.log(recipesToDisplay);
+
+  let recipesToDisplayByAppliance = recipes.filter((recipe) =>
+    recipe.appliance.includes(inputValue)
+  );
+
+  let recipesToDisplayByIngredient = [];
+  recipes.forEach((recipe) => {
+    recipe.ingredients.forEach((ingredient) => {
+      if (ingredient.ingredient.includes(inputValue)) {
+        recipesToDisplayByIngredient.push(recipe);
+      }
+    });
+  });
+
+  console.log(recipesToDisplayByName);
+  console.log(recipesToDisplayByIngredient);
+  console.log(recipesToDisplayByAppliance);
 };
 
 export {

@@ -182,7 +182,7 @@ const closeTagAboveMenuNav = (arrayOfCrossCloseAbove) => {
       );
 
       e.target.parentNode.remove();
-      //Lance la déselection des tags de recherches avancée et actualise les recettes + tags
+      //Lance la déselection des tags de recherches avancées et actualise les recettes + tags
       let restArticles = [];
       restArticles.splice(0, restArticles.length);
       let input = document.querySelector(".menuNav--searchInput");
