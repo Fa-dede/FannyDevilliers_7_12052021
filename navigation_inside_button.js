@@ -1,4 +1,8 @@
-import { normalizeValues } from "./function_normalizeValue.js";
+import {
+  normalizeValues,
+  changeDropDownMenusCssWidth,
+  createMessageIfNoItemsRemainings,
+} from "./reusables-functions.js";
 class NavigateInButton {
   constructor(listOfItems, articles) {
     this.listOfItems = listOfItems;
@@ -24,6 +28,8 @@ class NavigateInButton {
     inputs.forEach((input) => {
       input.addEventListener("input", (e) => {
         if (this.listOfItems.parentNode === input.parentNode) {
+          createMessageIfNoItemsRemainings();
+
           let valueLowCaseAndWithoutAccent = normalizeValues(input.value);
 
           this.listOfItemsArray.forEach((li) => {
@@ -51,6 +57,8 @@ class NavigateInButton {
       if (titleOfItems.includes(valueOfInput)) {
         li.classList.remove("erase-temporarly");
       }
+
+      changeDropDownMenusCssWidth();
     }
   }
 }

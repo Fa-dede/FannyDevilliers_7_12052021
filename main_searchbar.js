@@ -1,5 +1,5 @@
 import { MainSearchFactory } from "./search_inside_mainSearchBar.js";
-import { normalizeValues } from "./function_normalizeValue.js";
+import { normalizeValues } from "./reusables-functions.js";
 import {
   returnDisplayedArticles,
   refreshDropDownMenus,

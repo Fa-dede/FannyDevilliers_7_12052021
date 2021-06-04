@@ -1,15 +1,31 @@
-@media (max-width: 1472px) {
+@media (min-width: 1501px) {
   .recipe {
     max-width: unset;
-    min-width: 380px;
-    width: 47%;
+    min-width: unset;
+    width: 29%;
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1499px) {
+  #recipes-container {
+    justify-content: space-between;
+  }
   .recipe {
     max-width: unset;
-    min-width: 380px;
+    min-width: unset;
+    width: 45%;
+  }
+}
+
+@media (max-width: 990px) {
+  .recipe {
+    max-width: unset;
+    min-width: unset;
     width: 100%;
+  }
+
+  #dropDownMenus-container {
+    flex-direction: column;
+    position: relative;
   }
 }

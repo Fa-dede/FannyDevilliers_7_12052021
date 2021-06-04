@@ -16,7 +16,7 @@ class displayRecipesFactory {
     this.recipesContainer.insertAdjacentHTML(
       "afterbegin",
       `
-        <article class="recipe">
+        <article tabIndex = "0" class="recipe">
                
                 <img class = 'background_picture' src = "./img/recipes/${recipe.name}.jpg">
               

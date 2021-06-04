@@ -1,7 +1,9 @@
 import {
   normalizeValues,
   sortByAlphabeticsOrder,
-} from "./function_normalizeValue.js";
+  changeDropDownMenusCssWidth,
+  createMessageIfNoItemsRemainings,
+} from "./reusables-functions.js";
 import { recipes } from "./JS/datas.js";
 import { NavigateInButton } from "./navigation_inside_button.js";
 
@@ -100,75 +102,60 @@ class ButtonListFactory {
   //OUVRE ET FERME LES LISTES DEROULANTES
   openNavigationList(buttonInactive, buttonActive) {
     buttonInactive.addEventListener("click", (e) => {
-      //Supprime la classe 'Erase Temporarly' à l'ouverture du menu déroulant pou afficher le reste des tags disponibles
-      let listOfItems = [...document.querySelectorAll(".name-of-item")];
-      listOfItems.forEach((li) => {
-        if (li.className == "name-of-item erase-temporarly") {
-          li.classList.remove("erase-temporarly");
-        }
-      });
-
-      //Comportement des boutons au clic
       buttonInactive.style.display = "none";
       buttonActive.style.display = "block";
-      buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT / faire buttonActive.querySelector('.')
-      const closeActiveInputByChevron = (containerId, chevronId) => {
-        if (buttonActive.id === containerId) {
-          document.querySelector(chevronId).addEventListener("click", (e) => {
-            buttonActive.style.display = "none";
-            buttonInactive.style.display = "block";
-          });
-        }
-      };
-
-      this.createMessageIfNoItemsRemainings();
-
-      closeActiveInputByChevron("container-1_active", "#chevron-up-ingredient");
-      closeActiveInputByChevron("container-2_active", "#chevron-up-appliance");
-      closeActiveInputByChevron("container-3_active", "#chevron-up-ustensils");
-    });
-  }
-
-  //Crée un message dans le dropDownMenu lorsqu'il est vide
-  createMessageIfNoItemsRemainings() {
-    let menus = [
-      ...document.querySelectorAll(".dropDownMenus--input_active_list"),
-    ];
-
-    menus.forEach((menu) => {
-      let endMessage = menu.querySelector(".end-message");
-      this.createMessageForEachDropdownMenus(menu, endMessage);
-    });
-  }
-
-  //Crée le message dans le DOM et le supprime si le dropdown est re rempli avec des items
-  createMessageForEachDropdownMenus(menu, endMessage) {
-    if (endMessage) {
-      endMessage.remove();
-    }
-    let itemsClassNames = [];
-
-    let itemArray = [...menu.querySelectorAll("li")];
-
-    itemArray.forEach((item) => {
-      itemsClassNames.push(item.className);
-    });
-    let itemIsHidden = (className) => className === "name-of-item hidden";
-    let allitemsAreHidden = itemsClassNames.every(itemIsHidden);
-
-    if (allitemsAreHidden) {
-      menu.insertAdjacentHTML(
-        "afterbegin",
-        `
-      <p class = 'end-message'>Il n'y a plus rien à selectionner dans cette section </p>`
+      buttonActive.firstChild.nextElementSibling.focus(); // FOCUS SUR L'INPUT
+      this.closeActiveInputByChevron(
+        buttonInactive,
+        buttonActive,
+        "container-1_active",
+        "#chevron-up-ingredient"
       );
-    } else {
-      if (endMessage) {
-        endMessage.remove();
+      this.closeActiveInputByChevron(
+        buttonInactive,
+        buttonActive,
+        "container-2_active",
+        "#chevron-up-appliance"
+      );
+      this.closeActiveInputByChevron(
+        buttonInactive,
+        buttonActive,
+        "container-3_active",
+        "#chevron-up-ustensils"
+      );
+
+      this.removeEraseTemporarlyClassFromItemsInList();
+
+      createMessageIfNoItemsRemainings();
+
+      changeDropDownMenusCssWidth();
+    });
+  }
+
+  removeEraseTemporarlyClassFromItemsInList() {
+    let listOfItems = [...document.querySelectorAll(".name-of-item")];
+    listOfItems.forEach((li) => {
+      if (li.className == "name-of-item erase-temporarly") {
+        li.classList.remove("erase-temporarly");
       }
+    });
+  }
+
+  closeActiveInputByChevron(
+    buttonInactive,
+    buttonActive,
+    containerId,
+    chevronId
+  ) {
+    if (buttonActive.id === containerId) {
+      document.querySelector(chevronId).addEventListener("click", (e) => {
+        buttonActive.style.display = "none";
+        buttonInactive.style.display = "block";
+      });
     }
   }
 
+  //Ferme les menus au clic en dehors
   closeDropDownMenuByClickingOutside(buttonInactive, buttonActive) {
     document.addEventListener("click", (e) => {
       if (

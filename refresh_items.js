@@ -1,4 +1,4 @@
-import { normalizeValues } from "./function_normalizeValue.js";
+import { normalizeValues } from "./reusables-functions.js";
 import { recipes } from "./JS/datas.js";
 //ALGO DE RECHERCHE 1
 const refreshRecipes = (articles, restArticles, input) => {

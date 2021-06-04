@@ -841,7 +841,7 @@ const recipes = [
     description:
       "Etaler la pâte dans un Moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
     appliance: "Four",
-    ustensils: ["Moule à gateaux", "rouleau à patisserie", "Fouet"],
+    ustensils: ["Moule à gateaux", "Rouleau à patisserie", "Fouet"],
   },
   {
     id: 24,
