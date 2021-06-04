@@ -129,30 +129,44 @@ class ButtonListFactory {
     });
   }
 
-  //Crée un message dans le dropDownMenus lorsqu'il est vide
+  //Crée un message dans le dropDownMenu lorsqu'il est vide
   createMessageIfNoItemsRemainings() {
-    let ul = [
-      ...document.querySelectorAll(
-        ".dropDownMenus--input_active_list_appliance"
-      ),
+    let menus = [
+      ...document.querySelectorAll(".dropDownMenus--input_active_list"),
     ];
+
+    menus.forEach((menu) => {
+      let endMessage = menu.querySelector(".end-message");
+      this.createMessageForEachDropdownMenus(menu, endMessage);
+    });
+  }
+
+  //Crée le message dans le DOM et le supprime si le dropdown est re rempli avec des items
+  createMessageForEachDropdownMenus(menu, endMessage) {
+    if (endMessage) {
+      endMessage.remove();
+    }
     let itemsClassNames = [];
 
-    ul.forEach((item) => {
-      let itemArray = [...item.children];
-      itemArray.forEach((item) => {
-        itemsClassNames.push(item.className);
-      });
+    let itemArray = [...menu.querySelectorAll("li")];
+
+    itemArray.forEach((item) => {
+      itemsClassNames.push(item.className);
     });
-
-    console.log(itemsClassNames);
     let itemIsHidden = (className) => className === "name-of-item hidden";
-    console.log(itemsClassNames.every(itemIsHidden));
+    let allitemsAreHidden = itemsClassNames.every(itemIsHidden);
 
-    if (itemsClassNames.every(itemIsHidden)) {
-      return (p.innerHTML = `hello`);
+    if (allitemsAreHidden) {
+      menu.insertAdjacentHTML(
+        "afterbegin",
+        `
+      <p class = 'end-message'>Il n'y a plus rien à selectionner dans cette section </p>`
+      );
+    } else {
+      if (endMessage) {
+        endMessage.remove();
+      }
     }
-    //FINIR LE MESSAGE D ERREUR !!!!!!!!!! ICIIIIIIII
   }
 
   closeDropDownMenuByClickingOutside(buttonInactive, buttonActive) {

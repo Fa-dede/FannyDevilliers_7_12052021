@@ -94,11 +94,6 @@ const eraseValuesAlreadySelected = (items) => {
   });
 };
 
-const createMessageIfNoItemsRemainings = () => {
-  let ul = [...document.querySelectorAll(".dropDownMenus--input_active_list")];
-  console.log(ul);
-};
-
 const refreshElementAfterRemoveTags = (restArticles) => {
   let articles = [...document.querySelectorAll(".recipe")];
   let buttons = [...document.querySelectorAll(".menuNav--buttonTagSelected")];
@@ -124,8 +119,6 @@ const refreshElementAfterRemoveTags = (restArticles) => {
       item.classList.remove("hidden");
     });
   }
-
-  createMessageIfNoItemsRemainings();
 };
 
 const refreshRecipesAfterRemovingTags = (articles, restArticles, buttons) => {

@@ -27,11 +27,11 @@ class NavigateInButton {
           let valueLowCaseAndWithoutAccent = normalizeValues(input.value);
 
           this.listOfItemsArray.forEach((li) => {
+            //Supprime temporairement les éléments restants de la liste des tags affinée
             if (li.className !== "name-of-item hidden") {
               li.classList.add("erase-temporarly");
             }
 
-            // li.style.display = "none";
             let titleLowCaseAndWithoutAccent = normalizeValues(li.title);
             //Affiche les items avec la même valeur que la saisie entrée dans l'input
             this.displayItemsWithSameValuesAsEnteredInInput(
@@ -45,10 +45,10 @@ class NavigateInButton {
     });
   }
 
+  //Affiche les items dans la liste déroulante qui ont la même valeur que la saisie
   displayItemsWithSameValuesAsEnteredInInput(titleOfItems, valueOfInput, li) {
     if (li.className === "name-of-item erase-temporarly") {
       if (titleOfItems.includes(valueOfInput)) {
-        // li.style.display = "flex";
         li.classList.remove("erase-temporarly");
       }
     }
