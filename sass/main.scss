@@ -218,8 +218,8 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: start;
-  gap: 50px;
+  justify-content: stretch;
+  gap: 40px 40px;
 }
 
 .background_picture {
@@ -233,7 +233,7 @@ body {
   cursor: pointer;
   min-width: 380px;
   // max-width: 520px;
-  width: 30%;
+  // width: 30%;
   min-height: 300px;
   border-radius: 5px;
   &:hover,

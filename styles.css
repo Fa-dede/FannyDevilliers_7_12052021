@@ -208,8 +208,8 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: start;
-  gap: 50px;
+  justify-content: stretch;
+  gap: 40px 40px;
 }
 
 .background_picture {
@@ -222,7 +222,6 @@ body {
 .recipe {
   cursor: pointer;
   min-width: 380px;
-  width: 30%;
   min-height: 300px;
   border-radius: 5px;
 }
@@ -292,18 +291,19 @@ body {
   .recipe {
     max-width: unset;
     min-width: unset;
-    width: 29%;
+    width: 31%;
   }
 }
 @media (max-width: 1499px) {
   #recipes-container {
     justify-content: space-between;
+    gap: 40px 0;
   }
 
   .recipe {
     max-width: unset;
     min-width: unset;
-    width: 45%;
+    width: 48%;
   }
 }
 @media (max-width: 990px) {

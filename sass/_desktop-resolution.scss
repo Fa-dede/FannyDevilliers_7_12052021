@@ -2,18 +2,19 @@
   .recipe {
     max-width: unset;
     min-width: unset;
-    width: 29%;
+    width: 31%;
   }
 }
 
 @media (max-width: 1499px) {
   #recipes-container {
     justify-content: space-between;
+    gap: 40px 0;
   }
   .recipe {
     max-width: unset;
     min-width: unset;
-    width: 45%;
+    width: 48%;
   }
 }
 
