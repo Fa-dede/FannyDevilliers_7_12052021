@@ -1463,7 +1463,7 @@ const recipes = [
   },
   {
     id: 42,
-    name: "Charlotte au poires",
+    name: "Charlotte aux poires",
     servings: 3,
     ingredients: [
       {
