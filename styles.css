@@ -196,7 +196,7 @@ body {
 
 #error-message {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 120px;
   font-size: 20px;
 }
 #error-message i {

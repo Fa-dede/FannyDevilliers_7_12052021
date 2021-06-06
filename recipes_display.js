@@ -12,7 +12,7 @@ class displayRecipesFactory {
     });
   }
 
-  createRecipeDOMElement(recipe, ingredientinfos, applianceAndUstensilsInfos) {
+  createRecipeDOMElement(recipe, ingredientinfos) {
     this.recipesContainer.insertAdjacentHTML(
       "afterbegin",
       `
