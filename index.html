@@ -23,75 +23,72 @@
         <input class="menuNav--searchInput" type="search"
             placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"><i
             class="menuNav--searchInput_glass fas fa-search"></i>
-        <span id="under-input-message"></span>
-        <div class="menuNav--buttons-selected-container"></div>
+    </nav>
+    <!-- <span id="under-input-message"></span> -->
+    <div class="menuNav--buttons-selected-container"></div>
 
-        <!-- Incrémentation Tags en JS  -->
+    <!-- Incrémentation Tags en JS  -->
 
-        <div id="dropDownMenus-container">
+    <div id="dropDownMenus-container">
 
-            <div class="dropDownMenus-container dropDownMenus-container_1">
+        <div class="dropDownMenus-container dropDownMenus-container_1">
 
-                <div id="container-1_inactive" class="dropDownMenus-container_inactive">
+            <div id="container-1_inactive" class="dropDownMenus-container_inactive">
 
-                    <input type="text" id="ingredients-input"
-                        class="dropDownMenus--input dropDownMenus--input_ingredients" placeholder="Ingrédients">
-                    <i id="chevron-down-ingredient" class="dropDownMenus--chevronDown fas fa-chevron-down"></i>
-                </div>
-
-                <div id="container-1_active" class="dropDownMenus--input_active dropDownMenus--input_active_ingredient">
-
-                    <input type="search" class="dropDownMenus--input_active_title"
-                        placeholder="Rechercher un ingrédient"><i id="chevron-up-ingredient"
-                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
-                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ing">
-
-                        <!-- Incrémentation <li> en JS -->
-                    </ul>
-                </div>
+                <input type="text" id="ingredients-input" class="dropDownMenus--input dropDownMenus--input_ingredients"
+                    placeholder="Ingrédients">
+                <i id="chevron-down-ingredient" class="dropDownMenus--chevronDown fas fa-chevron-down"></i>
             </div>
 
-            <div class="dropDownMenus-container dropDownMenus-container_2">
-                <div id="container-2_inactive">
-                    <input type="text" id="appareil-input"
-                        class="dropDownMenus dropDownMenus--input dropDownMenus--input_appareil" placeholder="Appareil">
-                    <i
-                        class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down inactive"></i>
-                </div>
+            <div id="container-1_active" class="dropDownMenus--input_active dropDownMenus--input_active_ingredient">
 
-                <div id="container-2_active" class="dropDownMenus--input_active dropDownMenus--input_active_appliance">
-                    <input type="search" class="dropDownMenus--input_active_title"
-                        placeholder="Rechercher un appareil"><i id="chevron-up-appliance"
-                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
-                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_appliance">
+                <input type="search" class="dropDownMenus--input_active_title" placeholder="Rechercher un ingrédient"><i
+                    id="chevron-up-ingredient" class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i>
+                <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ing">
 
-                        <!-- Incrémentation <li> en JS -->
-                    </ul>
-                    <span id="error-message2" class="hidden">Il n'y a plus aucun ingrédient selectionnable</span>
-
-                </div>
-            </div>
-
-            <div class="dropDownMenus-container dropDownMenus-container_3">
-
-                <div id="container-3_inactive">
-                    <input type="text" id="ustensiles-input"
-                        class="dropDownMenus dropDownMenus--input dropDownMenus--input_ustensiles"
-                        placeholder="Ustensiles">
-                    <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down"></i>
-                </div>
-
-                <div id="container-3_active" class="dropDownMenus--input_active dropDownMenus--input_active_ustensils">
-                    <input type="search" class="dropDownMenus--input_active_title"
-                        placeholder="Rechercher un ustensile"><i id="chevron-up-ustensils"
-                        class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i></span>
-                    <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ustensils">
-                        <!-- Incrémentation <li> en JS -->
-                    </ul>
-                </div>
+                    <!-- Incrémentation <li> en JS -->
+                </ul>
             </div>
         </div>
-    </nav>
+
+        <div class="dropDownMenus-container dropDownMenus-container_2">
+            <div id="container-2_inactive">
+                <input type="text" id="appareil-input"
+                    class="dropDownMenus dropDownMenus--input dropDownMenus--input_appareil" placeholder="Appareil">
+                <i
+                    class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down inactive"></i>
+            </div>
+
+            <div id="container-2_active" class="dropDownMenus--input_active dropDownMenus--input_active_appliance">
+                <input type="search" class="dropDownMenus--input_active_title" placeholder="Rechercher un appareil"><i
+                    id="chevron-up-appliance" class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i>
+                <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_appliance">
+
+                    <!-- Incrémentation <li> en JS -->
+                </ul>
+                <span id="error-message2" class="hidden">Il n'y a plus aucun ingrédient selectionnable</span>
+
+            </div>
+        </div>
+
+        <div class="dropDownMenus-container dropDownMenus-container_3">
+
+            <div id="container-3_inactive">
+                <input type="text" id="ustensiles-input"
+                    class="dropDownMenus dropDownMenus--input dropDownMenus--input_ustensiles" placeholder="Ustensiles">
+                <i class="dropDownMenus--chevronDown dropDownMenus--chevronDown_appareil fas fa-chevron-down"></i>
+            </div>
+
+            <div id="container-3_active" class="dropDownMenus--input_active dropDownMenus--input_active_ustensils">
+                <input type="search" class="dropDownMenus--input_active_title" placeholder="Rechercher un ustensile"><i
+                    id="chevron-up-ustensils" class="dropDownMenus--input_active_chevron fas fa-chevron-up"></i>
+                <ul class="dropDownMenus--input_active_list dropDownMenus--input_active_list_ustensils">
+                    <!-- Incrémentation <li> en JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
 
 
     <main id="recipes-container">

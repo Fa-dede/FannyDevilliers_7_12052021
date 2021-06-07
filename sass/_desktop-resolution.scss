@@ -16,17 +16,62 @@
     min-width: unset;
     width: 48%;
   }
+  .dropDownMenus-container .dropDownMenus-container_1 {
+    width: 100%;
+  }
 }
 
 @media (max-width: 990px) {
+  #recipes-container {
+    padding-top: 20px;
+  }
   .recipe {
     max-width: unset;
     min-width: unset;
     width: 100%;
   }
 
+  .menuNav--searchInput {
+    margin-bottom: 10px;
+  }
+
   #dropDownMenus-container {
     flex-direction: column;
     position: relative;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .dropDownMenus-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .dropDownMenus--input {
+    width: 100%;
+  }
+
+  .dropDownMenus--chevronDown {
+    color: #fff;
+    right: 30px;
+    top: unset;
+    bottom: 40px;
+  }
+
+  .dropDownMenus--input_active {
+    width: unset;
+    width: 100%;
+    &_list_ing {
+      max-height: unset;
+    }
+  }
+}
+
+// tablettes et mobiles
+
+@media (max-width: 700px) {
+  body {
+    padding: 20px;
   }
 }
