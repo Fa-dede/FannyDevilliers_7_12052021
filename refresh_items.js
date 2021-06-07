@@ -1,8 +1,21 @@
 import { normalizeValues } from "./reusables-functions.js";
+import { searchAlgo2 } from "./second_algorithm.js";
 import { recipes } from "./JS/datas.js";
 //ALGO DE RECHERCHE 1
 const refreshRecipes = (articles, restArticles, input) => {
+  let t0 = performance.now();
   searchAlgo1(articles, input);
+  let t1 = performance.now();
+  console.log(
+    `la recherche avec l'algorithme n°1 à pris ${t1 - t0} millisecondes`
+  );
+
+  // let t0 = performance.now();
+  // searchAlgo2(input);
+  // let t1 = performance.now();
+  // console.log(
+  //   `la recherche avec l'algorithme n°2 à pris ${t1 - t0} millisecondes`
+  // );
 
   returnDisplayedArticles(restArticles, articles);
   refreshDropDownMenus(restArticles);
@@ -74,23 +87,6 @@ const eraseValuesAlreadySelected = (items) => {
         item.classList.add("hidden");
       }
     });
-
-    //create end message of searching
-    // let ul = [
-    //   ...document.querySelectorAll(".dropDownMenus--input_active_list"),
-    // ];
-    // ul.forEach((ul) => {
-    //   if (ul.innerText == "") {
-    //     let p = document.createElement("p");
-    //     p.innerHTML = `<p class = 'end-message-tags'> Il n'y a plus rien à afficher dans cette section </p>`;
-    //     ul.appendChild(p);
-    //   } else {
-    //     let message = ul.querySelector(".end-message-tags");
-    //     if (message) {
-    //       message.remove();
-    //     }
-    //   }
-    // });
   });
 };
 
@@ -148,53 +144,6 @@ const searchAlgo1 = (articles, input) => {
       article.classList.add("hidden");
     }
   });
-};
-
-//SECOND ALGORITHME
-const searchAlgo2 = (inputValue) => {
-  let recipesDOM = document.querySelectorAll(".recipe");
-  recipesDOM.forEach((recipe) => {
-    recipe.remove();
-  });
-  inputValue = normalizeValues(inputValue);
-  recipes.forEach((recipe) => {
-    recipe.name = normalizeValues(recipe.name);
-    recipe.appliance = normalizeValues(recipe.appliance);
-    recipe.ingredients.forEach((ingredient) => {
-      ingredient.ingredient = normalizeValues(ingredient.ingredient);
-    });
-  });
-
-  // recipes.forEach((recipe) => {
-  //   recipe.appliance = normalizeValues(recipe.appliance);
-  //   return recipe.appliance;
-  // });
-  // recipes.forEach((recipe) => {
-  //   recipe.ustensils.forEach((ustensil) => {
-  //     ustensil = normalizeValues(ustensil);
-  //   });
-  // });
-
-  let recipesToDisplayByName = recipes.filter((recipe) =>
-    recipe.name.includes(inputValue)
-  );
-
-  let recipesToDisplayByAppliance = recipes.filter((recipe) =>
-    recipe.appliance.includes(inputValue)
-  );
-
-  let recipesToDisplayByIngredient = [];
-  recipes.forEach((recipe) => {
-    recipe.ingredients.forEach((ingredient) => {
-      if (ingredient.ingredient.includes(inputValue)) {
-        recipesToDisplayByIngredient.push(recipe);
-      }
-    });
-  });
-
-  console.log(recipesToDisplayByName);
-  console.log(recipesToDisplayByIngredient);
-  console.log(recipesToDisplayByAppliance);
 };
 
 export {
