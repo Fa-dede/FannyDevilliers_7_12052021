@@ -156,21 +156,27 @@ body {
         z-index: 999;
         li {
           width: 180px;
-          // height: 20px;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: clip;
           text-overflow: ellipsis;
           text-overflow: "...";
-          // max-width: 200px;
           cursor: pointer;
           &:hover {
             transform: scale(1.1) translate(5px);
             transition: 200ms;
+            overflow: unset;
+            white-space: unset;
+            text-overflow: unset;
+            text-overflow: unset;
           }
           &:focus {
             outline-style: dashed;
             outline-color: white;
+            overflow: unset;
+            white-space: unset;
+            text-overflow: unset;
+            text-overflow: unset;
           }
         }
         &_ing {
@@ -179,6 +185,7 @@ body {
         }
         // &_appliance {
         //   // max-height: 100px;
+        //   // width: 100%;
         // }
         // &_ustensils {
         //   // max-height: 270px;
@@ -275,12 +282,13 @@ body {
     background-color: $inputSearchBgColor;
     margin-top: -3px;
     border-radius: 0 0 5px 5px;
-    padding: 20px 20px 0px 20px;
-    min-height: 180px;
-    max-height: 180px;
+    padding: 20px;
+    // min-height: 120px;
+    height: 170px;
     &_name {
-      display: inline;
+      display: inline-block;
       margin: unset;
+      max-width: 280px;
     }
     &_time {
       display: block;
@@ -290,9 +298,11 @@ body {
     }
     &--text {
       margin-right: unset;
-      margin-top: 20px;
+      padding-top: 20px;
       display: flex;
       justify-content: space-around;
+      max-height: 90px;
+
       &_list {
         margin: unset;
         min-width: 161px;
@@ -300,15 +310,31 @@ body {
         padding-left: unset;
         list-style-type: none;
         font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "...";
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        padding-left: 10px;
       }
       &_instructions {
+        text-align: justify;
         display: inline;
         margin: unset;
         font-size: 12px;
         overflow: hidden;
-        overflow-wrap: break-word;
-        max-height: 120px;
+        white-space: wrap;
+        text-overflow: clip;
         text-overflow: ellipsis;
+        text-overflow: "...";
+        // max-height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "...";
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
         padding-left: 10px;
       }
     }

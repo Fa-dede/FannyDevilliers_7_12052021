@@ -62,19 +62,66 @@
   .dropDownMenus--input_active {
     width: unset;
     width: 100%;
-    &_list_ing {
-      max-height: unset;
+    &_list {
+      li {
+        max-width: 160px;
+      }
+      &_ing {
+        max-height: unset;
+      }
+    }
+  }
+
+  .dropDownMenus--input_active {
+    &_appliance,
+    &_ustensils {
+      max-width: unset;
+      max-width: 800px;
     }
   }
 }
 
-// tablettes et mobiles
+// mobiles
 
 @media (max-width: 700px) {
   body {
     padding: 20px;
   }
-  .dropDownMenus-container {
-    width: 200%;
+
+  .recipe--information {
+    min-height: unset;
+
+    &_name {
+      display: block;
+      text-align: center;
+    }
+    &_time {
+      display: block;
+      float: unset;
+      text-align: center;
+      margin-top: 5px;
+    }
+    &--text {
+      min-height: unset;
+      max-height: 60px;
+      overflow: hidden;
+      &_list {
+        min-width: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "...";
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+      &_instructions {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "...";
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+    }
   }
 }
