@@ -9,6 +9,9 @@ class CreateSearchBarFactory {
   constructor(articlesArray) {
     this.inputOfMainSearchBar = document.querySelector(".menuNav--searchInput");
     this.articlesArray = articlesArray;
+    this.menuOfTagSelected = document.querySelector(
+      ".menuNav--buttons-selected-container"
+    );
 
     this.searchInsideMainSearchBar(this.inputOfMainSearchBar);
 
@@ -19,6 +22,7 @@ class CreateSearchBarFactory {
     //Affiche toutes les recettes si l'input est vidé
     input.addEventListener("input", (e) => {
       if (input.value.length < 1) {
+        this.menuOfTagSelected.innerHTML = ""; // supprime l'intégralité des recherches avancés en même temps que la suppression de l'input principal
         let restArticles = [];
         restArticles = restArticles.splice(0, restArticles.length);
         let buttons = [
