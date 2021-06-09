@@ -28,7 +28,7 @@ class displayRecipesFactory {
                       ${ingredientinfos}
                       </ul>
                       <p class="recipe--information--text_instructions">${recipe.description}</p>
-                      <p style = 'display : none'> ${recipe.appliance} ${recipe.ustensils} </p>
+                      <p class="ustensils" style = 'display : none'> ${recipe.appliance} ${recipe.ustensils} </p>
                   </div>
               </footer>
           </article>
@@ -42,12 +42,12 @@ class displayRecipesFactory {
     recipe.ingredients.forEach((ingredient) => {
       if (ingredient.quantity) {
         if (ingredient.unit && ingredient.quantity) {
-          ingredientinfos += `<li><strong>${ingredient.ingredient}</strong> : ${ingredient.quantity} ${ingredient.unit}</li>`;
+          ingredientinfos += `<li><strong class = 'ingredient'>${ingredient.ingredient}</strong> : ${ingredient.quantity} ${ingredient.unit}</li>`;
         } else {
-          ingredientinfos += `<li><strong>${ingredient.ingredient}</strong> : ${ingredient.quantity}</li>`;
+          ingredientinfos += `<li><strong class = 'ingredient'>${ingredient.ingredient}</strong> : ${ingredient.quantity}</li>`;
         }
       } else {
-        ingredientinfos += `<li><strong>${ingredient.ingredient}</strong></li>`;
+        ingredientinfos += `<li><strong class = 'ingredient'>${ingredient.ingredient}</strong></li>`;
       }
     });
 

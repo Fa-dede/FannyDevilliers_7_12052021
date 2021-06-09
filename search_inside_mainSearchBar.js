@@ -1,4 +1,5 @@
 import { refreshRecipes } from "./refresh_items.js";
+import { normalizeValues } from "./reusables-functions.js";
 
 class MainSearchFactory {
   constructor(input, articles) {

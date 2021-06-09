@@ -2,11 +2,9 @@ import { normalizeValues } from "./reusables-functions.js";
 import { recipes } from "./JS/datas.js";
 
 //SECOND ALGORITHME
-const searchAlgo2 = (inputValue) => {
-  let recipesDOM = [...document.querySelectorAll(".recipe")];
-
-  //Supprime les recettes dans le DOM
-  recipesDOM.forEach((recipe) => {
+const searchAlgo2 = (articles, inputValue) => {
+  // //Supprime les recettes dans le DOM
+  articles.forEach((recipe) => {
     recipe.classList.add("hidden");
   });
 
@@ -19,21 +17,21 @@ const searchAlgo2 = (inputValue) => {
     recipe.appliance = normalizeValues(recipe.appliance);
     recipe.ingredients.forEach((elt) => {
       elt.ingredient = normalizeValues(elt.ingredient);
-      searchInsideRecipes(elt.ingredient, inputValue, recipesDOM);
+      searchInsideRecipes(elt.ingredient, inputValue, articles);
     });
     recipe.ustensils.forEach((ustensil) => {
       ustensil = normalizeValues(ustensil);
-      searchInsideRecipes(ustensil, inputValue, recipesDOM);
+      searchInsideRecipes(ustensil, inputValue, articles);
     });
 
-    searchInsideRecipes(recipe.name, inputValue, recipesDOM);
-    searchInsideRecipes(recipe.appliance, inputValue, recipesDOM);
+    searchInsideRecipes(recipe.name, inputValue, articles);
+    searchInsideRecipes(recipe.appliance, inputValue, articles);
   });
 };
 
-const searchInsideRecipes = (value, inputValue, recipesDOM) => {
+const searchInsideRecipes = (value, inputValue, articles) => {
   if (value.includes(inputValue)) {
-    recipesDOM.forEach((recipeInDom) => {
+    articles.forEach((recipeInDom) => {
       let recipeFooter =
         recipeInDom.firstChild.nextElementSibling.nextElementSibling;
       let footerValuesNorm = normalizeValues(recipeFooter.innerHTML);

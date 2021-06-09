@@ -128,7 +128,7 @@ class ButtonListFactory {
 
       createMessageIfNoItemsRemainings();
 
-      changeDropDownMenusCssWidth();
+      // changeDropDownMenusCssWidth();
     });
   }
 
