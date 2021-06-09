@@ -118,6 +118,7 @@ body {
       display: none;
       margin-right: 15px;
       min-width: 250px;
+      max-width: 70%;
       padding: 20px 2px;
       border-radius: 5px;
       &_title {
@@ -146,14 +147,22 @@ body {
       &_list {
         display: flex;
         margin-left: 20px;
-        flex-flow: column wrap;
+        // flex-flow: column wrap;
+        flex-wrap: wrap;
         gap: 5px 10px;
         list-style-type: none;
         padding-left: 0;
         color: #fff;
         z-index: 999;
         li {
-          max-width: 100px;
+          width: 180px;
+          // height: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: clip;
+          text-overflow: ellipsis;
+          text-overflow: "...";
+          // max-width: 200px;
           cursor: pointer;
           &:hover {
             transform: scale(1.1) translate(5px);
@@ -165,26 +174,27 @@ body {
           }
         }
         &_ing {
-          max-height: 500px;
+          // max-height: 400px;
+          width: 100%;
         }
-        &_appliance {
-          max-height: 100px;
-        }
-        &_ustensils {
-          max-height: 270px;
-        }
+        // &_appliance {
+        //   // max-height: 100px;
+        // }
+        // &_ustensils {
+        //   // max-height: 270px;
+        // }
       }
       &_ingredient {
         background-color: $ingredientsBgColor;
-        width: 350px;
+        max-width: 800px;
       }
       &_appliance {
         background-color: $appareilBgColor;
-        width: 350px;
+        max-width: 400px;
       }
       &_ustensils {
         background-color: $ustensiltesBgColor;
-        width: 350px;
+        max-width: 400px;
       }
     }
   }
@@ -200,6 +210,10 @@ body {
     cursor: pointer;
     height: 20px;
   }
+}
+
+.end-message {
+  padding-right: 20px;
 }
 //Changement de propriété pour JS
 #container-1_inactive {

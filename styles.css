@@ -111,6 +111,7 @@ body {
   display: none;
   margin-right: 15px;
   min-width: 250px;
+  max-width: 70%;
   padding: 20px 2px;
   border-radius: 5px;
 }
@@ -139,7 +140,7 @@ body {
 .dropDownMenus--input_active_list {
   display: flex;
   margin-left: 20px;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   gap: 5px 10px;
   list-style-type: none;
   padding-left: 0;
@@ -147,7 +148,12 @@ body {
   z-index: 999;
 }
 .dropDownMenus--input_active_list li {
-  max-width: 100px;
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  text-overflow: ellipsis;
+  text-overflow: "...";
   cursor: pointer;
 }
 .dropDownMenus--input_active_list li:hover {
@@ -159,25 +165,19 @@ body {
   outline-color: white;
 }
 .dropDownMenus--input_active_list_ing {
-  max-height: 500px;
-}
-.dropDownMenus--input_active_list_appliance {
-  max-height: 100px;
-}
-.dropDownMenus--input_active_list_ustensils {
-  max-height: 270px;
+  width: 100%;
 }
 .dropDownMenus--input_active_ingredient {
   background-color: #3282f7;
-  width: 350px;
+  max-width: 800px;
 }
 .dropDownMenus--input_active_appliance {
   background-color: #68d9a4;
-  width: 350px;
+  max-width: 400px;
 }
 .dropDownMenus--input_active_ustensils {
   background-color: #ed6454;
-  width: 350px;
+  max-width: 400px;
 }
 .dropDownMenus--chevronDown {
   color: #fff;
@@ -190,6 +190,10 @@ body {
   top: 30px;
   cursor: pointer;
   height: 20px;
+}
+
+.end-message {
+  padding-right: 20px;
 }
 
 #container-1_inactive {
