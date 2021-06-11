@@ -31,7 +31,7 @@ class CreateSearchBarFactory {
         this.articlesArray.forEach((article) => {
           article.classList.remove("hidden");
         });
-        let errorMessage = document.querySelector("#error-message");
+        let errorMessage = document.querySelector("#error-message"); //Supprime le message d'erreur au clic sur la croix
         if (errorMessage) errorMessage.remove();
 
         //Actualise les recettes uniquement en fonctions des tags si l'input est supprimé
