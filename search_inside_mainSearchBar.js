@@ -36,6 +36,7 @@ const research = (articles, input) => {
   restArticles.splice(0, restArticles.length);
 
   let errorMessage = document.querySelector("#error-message");
+
   if (errorMessage) errorMessage.remove();
 
   refreshRecipes(articles, restArticles, input.value);
