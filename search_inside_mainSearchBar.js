@@ -46,8 +46,8 @@ const research = (articles, input) => {
 };
 
 const displayErrorMessage = () => {
-  let menuNav = document.querySelector(".menuNav");
-  menuNav.insertAdjacentHTML(
+  let container = document.querySelector("#dropDownMenus-container");
+  container.insertAdjacentHTML(
     "afterend",
     `
         <p id = "error-message" >Oups...<i class="far fa-dizzy"></i><br>Votre recherche ne correspond à aucun résultat...Vous pouvez chercher "tarte aux pommes", "poisson", etc...</p>`

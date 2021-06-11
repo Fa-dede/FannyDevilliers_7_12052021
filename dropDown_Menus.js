@@ -127,8 +127,6 @@ class ButtonListFactory {
       this.removeEraseTemporarlyClassFromItemsInList();
 
       createMessageIfNoItemsRemainings();
-
-      // changeDropDownMenusCssWidth();
     });
   }
 

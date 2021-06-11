@@ -6,9 +6,9 @@ const refreshRecipes = (articles, restArticles, input) => {
   let t0 = performance.now();
   searchAlgo1(articles, input);
   let t1 = performance.now();
-  console.log(
-    `la recherche avec l'algorithme n°1 à pris ${t1 - t0} millisecondes`
-  );
+  // console.log(
+  //   `la recherche avec l'algorithme n°1 à pris ${t1 - t0} millisecondes`
+  // );
 
   // let t0 = performance.now();
   // searchAlgo2(articles, input);
