@@ -1,7 +1,6 @@
 import {
   normalizeValues,
   sortByAlphabeticsOrder,
-  changeDropDownMenusCssWidth,
   createMessageIfNoItemsRemainings,
 } from "./reusables-functions.js";
 import { recipes } from "./JS/datas.js";

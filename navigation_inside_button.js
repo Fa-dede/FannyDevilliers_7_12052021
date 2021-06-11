@@ -1,8 +1,4 @@
-import {
-  normalizeValues,
-  changeDropDownMenusCssWidth,
-  createMessageIfNoItemsRemainings,
-} from "./reusables-functions.js";
+import { normalizeValues } from "./reusables-functions.js";
 class NavigateInButton {
   constructor(listOfItems, articles) {
     this.listOfItems = listOfItems;
@@ -55,8 +51,6 @@ class NavigateInButton {
       if (titleOfItems.includes(valueOfInput)) {
         li.classList.remove("erase-temporarly");
       }
-
-      changeDropDownMenusCssWidth();
     }
   }
 }
